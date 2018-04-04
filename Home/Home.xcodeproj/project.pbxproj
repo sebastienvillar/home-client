@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D3B67BD209F944B00E86C18 /* UIFont+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B67BC209F944B00E86C18 /* UIFont+Palette.swift */; };
+		4D3B67BF209F956F00E86C18 /* ThermostatTemperatureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B67BE209F956F00E86C18 /* ThermostatTemperatureViewModel.swift */; };
+		4D3B67C4209F9A5800E86C18 /* Inter-UI-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4D3B67C3209F9A5800E86C18 /* Inter-UI-Regular.ttf */; };
+		4D3B67C7209FA00F00E86C18 /* AwayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B67C6209FA00F00E86C18 /* AwayController.swift */; };
+		4D3B67C9209FA01400E86C18 /* AwayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B67C8209FA01400E86C18 /* AwayModel.swift */; };
+		4D3B67CB209FA01900E86C18 /* AwayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B67CA209FA01900E86C18 /* AwayView.swift */; };
+		4D3B67CD209FA01E00E86C18 /* AwayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B67CC209FA01E00E86C18 /* AwayViewModel.swift */; };
 		4DF1BB132075397C00D12514 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1BB122075397C00D12514 /* AppDelegate.swift */; };
 		4DF1BB1A2075397D00D12514 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DF1BB192075397D00D12514 /* Assets.xcassets */; };
 		4DF1BB1D2075397D00D12514 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DF1BB1B2075397D00D12514 /* LaunchScreen.storyboard */; };
@@ -15,9 +22,23 @@
 		4DF1BB632075571600D12514 /* URLRequest+Methods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1BB602075571600D12514 /* URLRequest+Methods.swift */; };
 		4DF1BB672075575C00D12514 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1BB652075575C00D12514 /* Logger.swift */; };
 		4DF1BB682075575C00D12514 /* Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1BB662075575C00D12514 /* Json.swift */; };
+		4DF1BB6B2075577700D12514 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1BB692075577700D12514 /* DataSource.swift */; };
+		4DF1BB6C2075577700D12514 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1BB6A2075577700D12514 /* RootViewController.swift */; };
+		4DF1BB6E2075577D00D12514 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1BB6D2075577D00D12514 /* RootView.swift */; };
+		4DF1BB75207557C100D12514 /* ThermostatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1BB71207557C100D12514 /* ThermostatModel.swift */; };
+		4DF1BB76207557C100D12514 /* ThermostatTemperatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1BB72207557C100D12514 /* ThermostatTemperatureView.swift */; };
+		4DF1BB77207557C100D12514 /* ThermostatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1BB73207557C100D12514 /* ThermostatController.swift */; };
+		4DF1BB78207557C100D12514 /* ThermostatTemperatureAdjustmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1BB74207557C100D12514 /* ThermostatTemperatureAdjustmentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D3B67BC209F944B00E86C18 /* UIFont+Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Palette.swift"; sourceTree = "<group>"; };
+		4D3B67BE209F956F00E86C18 /* ThermostatTemperatureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermostatTemperatureViewModel.swift; sourceTree = "<group>"; };
+		4D3B67C3209F9A5800E86C18 /* Inter-UI-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-UI-Regular.ttf"; path = "Home/Resources/Fonts/Inter-UI-Regular.ttf"; sourceTree = SOURCE_ROOT; };
+		4D3B67C6209FA00F00E86C18 /* AwayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwayController.swift; sourceTree = "<group>"; };
+		4D3B67C8209FA01400E86C18 /* AwayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwayModel.swift; sourceTree = "<group>"; };
+		4D3B67CA209FA01900E86C18 /* AwayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwayView.swift; sourceTree = "<group>"; };
+		4D3B67CC209FA01E00E86C18 /* AwayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwayViewModel.swift; sourceTree = "<group>"; };
 		4DF1BB0F2075397C00D12514 /* Home.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Home.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DF1BB122075397C00D12514 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DF1BB192075397D00D12514 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -28,6 +49,13 @@
 		4DF1BB602075571600D12514 /* URLRequest+Methods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLRequest+Methods.swift"; sourceTree = "<group>"; };
 		4DF1BB652075575C00D12514 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		4DF1BB662075575C00D12514 /* Json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Json.swift; sourceTree = "<group>"; };
+		4DF1BB692075577700D12514 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		4DF1BB6A2075577700D12514 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		4DF1BB6D2075577D00D12514 /* RootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		4DF1BB71207557C100D12514 /* ThermostatModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThermostatModel.swift; sourceTree = "<group>"; };
+		4DF1BB72207557C100D12514 /* ThermostatTemperatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThermostatTemperatureView.swift; sourceTree = "<group>"; };
+		4DF1BB73207557C100D12514 /* ThermostatController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThermostatController.swift; sourceTree = "<group>"; };
+		4DF1BB74207557C100D12514 /* ThermostatTemperatureAdjustmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThermostatTemperatureAdjustmentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +69,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D3B67C2209F9A4D00E86C18 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				4D3B67C3209F9A5800E86C18 /* Inter-UI-Regular.ttf */,
+			);
+			name = Fonts;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		4D3B67C5209FA00300E86C18 /* Away */ = {
+			isa = PBXGroup;
+			children = (
+				4D3B67C6209FA00F00E86C18 /* AwayController.swift */,
+				4D3B67C8209FA01400E86C18 /* AwayModel.swift */,
+				4D3B67CA209FA01900E86C18 /* AwayView.swift */,
+				4D3B67CC209FA01E00E86C18 /* AwayViewModel.swift */,
+			);
+			path = Away;
+			sourceTree = "<group>";
+		};
 		4DF1BB062075397C00D12514 = {
 			isa = PBXGroup;
 			children = (
@@ -61,6 +109,10 @@
 			isa = PBXGroup;
 			children = (
 				4DF1BB122075397C00D12514 /* AppDelegate.swift */,
+				4DF1BB6A2075577700D12514 /* RootViewController.swift */,
+				4DF1BB6D2075577D00D12514 /* RootView.swift */,
+				4DF1BB692075577700D12514 /* DataSource.swift */,
+				4DF1BB6F207557A200D12514 /* Components */,
 				4DF1BB642075574300D12514 /* Helpers */,
 				4DF1BB5D207556EE00D12514 /* Extensions */,
 				4DF1BB2520753A3100D12514 /* Resources */,
@@ -71,6 +123,7 @@
 		4DF1BB2520753A3100D12514 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4D3B67C2209F9A4D00E86C18 /* Fonts */,
 				4DF1BB192075397D00D12514 /* Assets.xcassets */,
 				4DF1BB1B2075397D00D12514 /* LaunchScreen.storyboard */,
 				4DF1BB1E2075397D00D12514 /* Info.plist */,
@@ -82,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				4DF1BB5E2075571600D12514 /* UIColor+Palette.swift */,
+				4D3B67BC209F944B00E86C18 /* UIFont+Palette.swift */,
 				4DF1BB5F2075571600D12514 /* UIView+Frame.swift */,
 				4DF1BB602075571600D12514 /* URLRequest+Methods.swift */,
 			);
@@ -95,6 +149,27 @@
 				4DF1BB652075575C00D12514 /* Logger.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		4DF1BB6F207557A200D12514 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				4D3B67C5209FA00300E86C18 /* Away */,
+				4DF1BB70207557A900D12514 /* Thermostat */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		4DF1BB70207557A900D12514 /* Thermostat */ = {
+			isa = PBXGroup;
+			children = (
+				4DF1BB73207557C100D12514 /* ThermostatController.swift */,
+				4DF1BB71207557C100D12514 /* ThermostatModel.swift */,
+				4DF1BB72207557C100D12514 /* ThermostatTemperatureView.swift */,
+				4D3B67BE209F956F00E86C18 /* ThermostatTemperatureViewModel.swift */,
+				4DF1BB74207557C100D12514 /* ThermostatTemperatureAdjustmentView.swift */,
+			);
+			path = Thermostat;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DF1BB1D2075397D00D12514 /* LaunchScreen.storyboard in Resources */,
+				4D3B67C4209F9A5800E86C18 /* Inter-UI-Regular.ttf in Resources */,
 				4DF1BB1A2075397D00D12514 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -167,11 +243,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DF1BB77207557C100D12514 /* ThermostatController.swift in Sources */,
+				4DF1BB75207557C100D12514 /* ThermostatModel.swift in Sources */,
+				4D3B67CB209FA01900E86C18 /* AwayView.swift in Sources */,
+				4DF1BB6B2075577700D12514 /* DataSource.swift in Sources */,
+				4D3B67BF209F956F00E86C18 /* ThermostatTemperatureViewModel.swift in Sources */,
 				4DF1BB672075575C00D12514 /* Logger.swift in Sources */,
+				4D3B67C7209FA00F00E86C18 /* AwayController.swift in Sources */,
+				4D3B67CD209FA01E00E86C18 /* AwayViewModel.swift in Sources */,
 				4DF1BB132075397C00D12514 /* AppDelegate.swift in Sources */,
 				4DF1BB612075571600D12514 /* UIColor+Palette.swift in Sources */,
+				4D3B67BD209F944B00E86C18 /* UIFont+Palette.swift in Sources */,
+				4D3B67C9209FA01400E86C18 /* AwayModel.swift in Sources */,
 				4DF1BB682075575C00D12514 /* Json.swift in Sources */,
+				4DF1BB78207557C100D12514 /* ThermostatTemperatureAdjustmentView.swift in Sources */,
+				4DF1BB6E2075577D00D12514 /* RootView.swift in Sources */,
+				4DF1BB76207557C100D12514 /* ThermostatTemperatureView.swift in Sources */,
 				4DF1BB632075571600D12514 /* URLRequest+Methods.swift in Sources */,
+				4DF1BB6C2075577700D12514 /* RootViewController.swift in Sources */,
 				4DF1BB622075571600D12514 /* UIView+Frame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
