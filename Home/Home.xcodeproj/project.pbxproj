@@ -13,6 +13,8 @@
 		4DF1BB612075571600D12514 /* UIColor+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1BB5E2075571600D12514 /* UIColor+Palette.swift */; };
 		4DF1BB622075571600D12514 /* UIView+Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1BB5F2075571600D12514 /* UIView+Frame.swift */; };
 		4DF1BB632075571600D12514 /* URLRequest+Methods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1BB602075571600D12514 /* URLRequest+Methods.swift */; };
+		4DF1BB672075575C00D12514 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1BB652075575C00D12514 /* Logger.swift */; };
+		4DF1BB682075575C00D12514 /* Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1BB662075575C00D12514 /* Json.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		4DF1BB5E2075571600D12514 /* UIColor+Palette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Palette.swift"; sourceTree = "<group>"; };
 		4DF1BB5F2075571600D12514 /* UIView+Frame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Frame.swift"; sourceTree = "<group>"; };
 		4DF1BB602075571600D12514 /* URLRequest+Methods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLRequest+Methods.swift"; sourceTree = "<group>"; };
+		4DF1BB652075575C00D12514 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		4DF1BB662075575C00D12514 /* Json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Json.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				4DF1BB122075397C00D12514 /* AppDelegate.swift */,
+				4DF1BB642075574300D12514 /* Helpers */,
 				4DF1BB5D207556EE00D12514 /* Extensions */,
 				4DF1BB2520753A3100D12514 /* Resources */,
 			);
@@ -81,6 +86,15 @@
 				4DF1BB602075571600D12514 /* URLRequest+Methods.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4DF1BB642075574300D12514 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				4DF1BB662075575C00D12514 /* Json.swift */,
+				4DF1BB652075575C00D12514 /* Logger.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,8 +167,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DF1BB672075575C00D12514 /* Logger.swift in Sources */,
 				4DF1BB132075397C00D12514 /* AppDelegate.swift in Sources */,
 				4DF1BB612075571600D12514 /* UIColor+Palette.swift in Sources */,
+				4DF1BB682075575C00D12514 /* Json.swift in Sources */,
 				4DF1BB632075571600D12514 /* URLRequest+Methods.swift in Sources */,
 				4DF1BB622075571600D12514 /* UIView+Frame.swift in Sources */,
 			);
