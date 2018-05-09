@@ -14,6 +14,7 @@ class RootView: UIScrollView {
   private struct Constants {
     static let paddingHorizontal: CGFloat = 35
     static let paddingVertical: CGFloat = 23
+    static let adjustmentViewMarginTop: CGFloat = 20
   }
 
   // MARK: - Public
@@ -85,6 +86,15 @@ class RootView: UIScrollView {
       y: Constants.paddingVertical,
       width: viewCollection.awayView.width,
       height: viewCollection.awayView.height
+    )
+
+    // Thermostat temperature adjustment
+    viewCollection.thermostatTemperatureAdjustmentView.sizeToFit()
+    viewCollection.thermostatTemperatureAdjustmentView.frame = CGRect(
+      x: 0,
+      y: viewCollection.awayView.bottom + Constants.adjustmentViewMarginTop,
+      width: width,
+      height: viewCollection.thermostatTemperatureAdjustmentView.height
     )
   }
 

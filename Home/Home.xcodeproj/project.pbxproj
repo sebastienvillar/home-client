@@ -14,6 +14,7 @@
 		4D3B67C9209FA01400E86C18 /* AwayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B67C8209FA01400E86C18 /* AwayModel.swift */; };
 		4D3B67CB209FA01900E86C18 /* AwayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B67CA209FA01900E86C18 /* AwayView.swift */; };
 		4D3B67CD209FA01E00E86C18 /* AwayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B67CC209FA01E00E86C18 /* AwayViewModel.swift */; };
+		4D3B67CF209FEAFC00E86C18 /* ThermostatTemperatureAdjustmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B67CE209FEAFC00E86C18 /* ThermostatTemperatureAdjustmentViewModel.swift */; };
 		4DF1BB132075397C00D12514 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1BB122075397C00D12514 /* AppDelegate.swift */; };
 		4DF1BB1A2075397D00D12514 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DF1BB192075397D00D12514 /* Assets.xcassets */; };
 		4DF1BB1D2075397D00D12514 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DF1BB1B2075397D00D12514 /* LaunchScreen.storyboard */; };
@@ -39,6 +40,7 @@
 		4D3B67C8209FA01400E86C18 /* AwayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwayModel.swift; sourceTree = "<group>"; };
 		4D3B67CA209FA01900E86C18 /* AwayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwayView.swift; sourceTree = "<group>"; };
 		4D3B67CC209FA01E00E86C18 /* AwayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwayViewModel.swift; sourceTree = "<group>"; };
+		4D3B67CE209FEAFC00E86C18 /* ThermostatTemperatureAdjustmentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermostatTemperatureAdjustmentViewModel.swift; sourceTree = "<group>"; };
 		4DF1BB0F2075397C00D12514 /* Home.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Home.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DF1BB122075397C00D12514 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DF1BB192075397D00D12514 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				4DF1BB72207557C100D12514 /* ThermostatTemperatureView.swift */,
 				4D3B67BE209F956F00E86C18 /* ThermostatTemperatureViewModel.swift */,
 				4DF1BB74207557C100D12514 /* ThermostatTemperatureAdjustmentView.swift */,
+				4D3B67CE209FEAFC00E86C18 /* ThermostatTemperatureAdjustmentViewModel.swift */,
 			);
 			path = Thermostat;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				4D3B67CB209FA01900E86C18 /* AwayView.swift in Sources */,
 				4DF1BB6B2075577700D12514 /* DataSource.swift in Sources */,
 				4D3B67BF209F956F00E86C18 /* ThermostatTemperatureViewModel.swift in Sources */,
+				4D3B67CF209FEAFC00E86C18 /* ThermostatTemperatureAdjustmentViewModel.swift in Sources */,
 				4DF1BB672075575C00D12514 /* Logger.swift in Sources */,
 				4D3B67C7209FA00F00E86C18 /* AwayController.swift in Sources */,
 				4D3B67CD209FA01E00E86C18 /* AwayViewModel.swift in Sources */,

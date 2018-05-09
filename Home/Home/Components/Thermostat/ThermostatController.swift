@@ -30,5 +30,6 @@ class ThermostatController {
     }
 
     temperatureView.setup(with: ThermostatTemperatureViewModel(model: model))
+    temperatureAdjustmentView.setup(with: ThermostatTemperatureAdjustmentViewModel(model: model))
   }
 }

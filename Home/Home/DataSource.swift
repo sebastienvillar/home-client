@@ -44,7 +44,7 @@ class DataSource {
   // MARK: - Public
 
   func refresh(completion: (_ success: Bool) -> Void) {
-    thermostatModel = ThermostatModel(temperature: 30, targetTemperature: 35, mode: .heat, status: .on)
+    thermostatModel = ThermostatModel(temperature: 30, targetTemperature: 22, mode: .heat, status: .on)
     awayModel = AwayModel(method: .auto, value: .away)
 //    thermostatModel = root?.object(at: "thermostat")
     completion(true)
