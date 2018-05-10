@@ -1,5 +1,9 @@
 //
-//  Copyright 2013-2018 Microsoft Inc.
+//  ThermostatModel.swift
+//  Home
+//
+//  Created by Sebastien Villar on 5/6/18.
+//  Copyright © 2018 -. All rights reserved.
 //
 
 import Foundation

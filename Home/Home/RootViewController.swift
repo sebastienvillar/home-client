@@ -53,17 +53,17 @@ class RootViewController: UIViewController {
       if self.controllers == nil {
         // Setup controllers
         let thermostatController = ThermostatController(dataSource: self.dataSource)
-        let awayController = AwayController(dataSource: self.dataSource)
+        let userController = UserController(dataSource: self.dataSource)
         self.controllers = [
           thermostatController,
-          awayController,
+          userController,
         ]
 
         // Setups view collection
         let viewCollection = RootView.ViewCollection(
           thermostatTemperatureView: thermostatController.temperatureView,
           thermostatTemperatureAdjustmentView: thermostatController.temperatureAdjustmentView,
-          awayView: awayController.awayView
+          userView: userController.userView
         )
 
         // Setup root view

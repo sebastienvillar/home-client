@@ -174,10 +174,8 @@ extension ThermostatTemperatureAdjustmentView: UIScrollViewDelegate {
       return
     }
 
-    selectedIndex = centerIndex
-
-    if let viewModel = viewModel, let selectedIndex = selectedIndex {
-      let temperature = viewModel.temperatureValues[selectedIndex]
+    if let viewModel = viewModel {
+      let temperature = viewModel.temperatureValues[centerIndex]
       selectionHandler(CGFloat(temperature))
     }
   }

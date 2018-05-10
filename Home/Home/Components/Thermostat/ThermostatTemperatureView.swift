@@ -75,7 +75,7 @@ class ThermostatTemperatureView: UIView {
   }
 
   // MARK: - Private
-
+  
   private var label: UILabel = {
     let label = UILabel()
     label.textColor = UIColor.foregroundWhite

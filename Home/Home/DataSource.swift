@@ -12,7 +12,8 @@ class DataSource {
 
   enum ChangeKey {
     case thermostat
-    case away
+    case users
+    case user
   }
 
   struct ChangeBlock: Equatable {
@@ -35,27 +36,37 @@ class DataSource {
     }
   }
 
-  var awayModel: AwayModel? {
+  var usersModel: UsersModel? {
     didSet {
-      notifyOfChange(for: .away)
+      notifyOfChange(for: .users)
+    }
+  }
+
+  var userModel: UserModel? {
+    didSet {
+      notifyOfChange(for: .user)
     }
   }
 
   // MARK: - Public
 
   func refresh(completion: @escaping (_ success: Bool) -> Void) {
-    awayModel = AwayModel(method: .auto, value: .away)
-    ThermostatApi.get { response in
-      switch response {
-      case .success(let thermostatModel):
-        DispatchQueue.main.async {
-          self.thermostatModel = thermostatModel
-          completion(true)
-        }
-      case .failure:
-        completion(false)
-        break
-      }
+    let group = DispatchGroup()
+    var success = true
+    let handler = { (aSuccess: Bool) in
+      success = success && aSuccess
+      group.leave()
+    }
+
+    group.enter()
+    refreshThermostat(completion: handler)
+    group.enter()
+    refreshUsers(completion: handler)
+    group.enter()
+    refreshUser(completion: handler)
+
+    group.notify(queue: .main) {
+      completion(success)
     }
   }
 
@@ -63,6 +74,15 @@ class DataSource {
     var blocks = subscribedBlocks[key] ?? [ChangeBlock]()
     blocks.append(block)
     subscribedBlocks[key] = blocks
+    block.block()
+  }
+
+  func subscribeToChanges(for keys: [ChangeKey], block: ChangeBlock) {
+    keys.forEach { key in
+      var blocks = subscribedBlocks[key] ?? [ChangeBlock]()
+      blocks.append(block)
+      subscribedBlocks[key] = blocks
+    }
     block.block()
   }
 
@@ -81,4 +101,45 @@ class DataSource {
     subscribedBlocks[key]?.forEach { $0.block() }
   }
 
+  private func refreshThermostat(completion: @escaping (_ success: Bool) -> Void) {
+    ThermostatApi.get { response in
+      DispatchQueue.main.async {
+        switch response {
+        case .success(let thermostatModel):
+          self.thermostatModel = thermostatModel
+          completion(true)
+        case .failure:
+          completion(false)
+        }
+      }
+    }
+  }
+
+  private func refreshUsers(completion: @escaping (_ success: Bool) -> Void) {
+    UsersApi.getUsers { response in
+      DispatchQueue.main.async {
+        switch response {
+        case .success(let usersModel):
+          self.usersModel = usersModel
+          completion(true)
+        case .failure:
+          completion(false)
+        }
+      }
+    }
+  }
+
+  private func refreshUser(completion: @escaping (_ success: Bool) -> Void) {
+    UsersApi.getUser { response in
+      DispatchQueue.main.async {
+        switch response {
+        case .success(let userModel):
+          self.userModel = userModel
+          completion(true)
+        case .failure:
+          completion(false)
+        }
+      }
+    }
+  }
 }

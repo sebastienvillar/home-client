@@ -28,13 +28,13 @@ class RootView: UIScrollView {
   struct ViewCollection {
     let thermostatTemperatureView: UIView
     let thermostatTemperatureAdjustmentView: UIView
-    let awayView: UIView
+    let userView: UIView
 
     var allViews: [UIView] {
       return [
         thermostatTemperatureView,
         thermostatTemperatureAdjustmentView,
-        awayView,
+        userView,
       ]
     }
   }
@@ -80,19 +80,19 @@ class RootView: UIScrollView {
     )
 
     // Away
-    viewCollection.awayView.sizeToFit()
-    viewCollection.awayView.frame = CGRect(
-      x: width - Constants.paddingHorizontal - viewCollection.awayView.width,
+    viewCollection.userView.sizeToFit()
+    viewCollection.userView.frame = CGRect(
+      x: width - Constants.paddingHorizontal - viewCollection.userView.width,
       y: Constants.paddingVertical,
-      width: viewCollection.awayView.width,
-      height: viewCollection.awayView.height
+      width: viewCollection.userView.width,
+      height: viewCollection.userView.height
     )
 
     // Thermostat temperature adjustment
     viewCollection.thermostatTemperatureAdjustmentView.sizeToFit()
     viewCollection.thermostatTemperatureAdjustmentView.frame = CGRect(
       x: 0,
-      y: viewCollection.awayView.bottom + Constants.adjustmentViewMarginTop,
+      y: viewCollection.userView.bottom + Constants.adjustmentViewMarginTop,
       width: width,
       height: viewCollection.thermostatTemperatureAdjustmentView.height
     )
