@@ -7,15 +7,20 @@
 //
 
 import Foundation
+import UIKit
 
 class ThermostatController {
 
   lazy var temperatureView = ThermostatTemperatureView()
-  lazy var temperatureAdjustmentView = ThermostatTemperatureAdjustmentView()
+  lazy var temperatureAdjustmentView = ThermostatTemperatureAdjustmentView(selectionHandler: { [weak self] temperature in
+    self?.handleTemperatureSelection(temperature)
+  })
 
   // MARK: - Public
 
   init(dataSource: DataSource) {
+    self.dataSource = dataSource
+
     // Register changes
     dataSource.subscribeToChange(for: .thermostat, block: DataSource.ChangeBlock(block: { [weak self] in
       self?.handleThermostatModelChange(model: dataSource.thermostatModel)
@@ -24,6 +29,8 @@ class ThermostatController {
 
   // MARK: - Private
 
+  let dataSource: DataSource
+
   private func handleThermostatModelChange(model: ThermostatModel?) {
     guard let model = model else {
       return
@@ -31,5 +38,9 @@ class ThermostatController {
 
     temperatureView.setup(with: ThermostatTemperatureViewModel(model: model))
     temperatureAdjustmentView.setup(with: ThermostatTemperatureAdjustmentViewModel(model: model))
+  }
+
+  private func handleTemperatureSelection(_ temperature: CGFloat) {
+    ThermostatManager.setTargetTemperature(temperature, dataSource: dataSource)
   }
 }

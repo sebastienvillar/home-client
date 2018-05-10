@@ -18,6 +18,8 @@ struct ThermostatTemperatureAdjustmentViewModel {
 
   // MARK: - Public
 
+  let temperatureValues = Array(stride(from: Constants.minTemperature, to: Constants.maxTemperature + Constants.temperatureInterval, by: Constants.temperatureInterval))
+
   var temperatures: [String] {
     return temperatureValues.map { "\($0)º" }
   }
@@ -34,7 +36,5 @@ struct ThermostatTemperatureAdjustmentViewModel {
   // MARK: - Private
 
   let model: ThermostatModel
-
-  private let temperatureValues = Array(stride(from: Constants.minTemperature, to: Constants.maxTemperature + Constants.temperatureInterval, by: Constants.temperatureInterval))
 
 }

@@ -13,7 +13,9 @@ class ThermostatTemperatureAdjustmentView: UIView {
 
   // MARK: - Public
 
-  init() {
+  init(selectionHandler: @escaping (_ temperature: CGFloat) -> Void) {
+    self.selectionHandler = selectionHandler
+
     super.init(frame: .zero)
 
     addSubview(scrollView)
@@ -25,6 +27,8 @@ class ThermostatTemperatureAdjustmentView: UIView {
   }
 
   func setup(with viewModel: ThermostatTemperatureAdjustmentViewModel) {
+    self.viewModel = viewModel
+
     if cells.isEmpty {
       // Setup views
       cells = viewModel.temperatures.enumerated().map { (index, text) in
@@ -78,7 +82,7 @@ class ThermostatTemperatureAdjustmentView: UIView {
       right: (width - Cell.Constants.minWidth) / 2
     )
 
-    if needsSelection {
+    if needsSelection, let selectedIndex = selectedIndex {
       needsSelection = false
       scrollView.contentOffset = contentOffset(for: selectedIndex)
     }
@@ -127,7 +131,9 @@ class ThermostatTemperatureAdjustmentView: UIView {
     return scrollView
   }()
 
-  private var selectedIndex: Int = 0
+  private var viewModel: ThermostatTemperatureAdjustmentViewModel?
+  private let selectionHandler: (_ temperature: CGFloat) -> Void
+  private var selectedIndex: Int?
   private var cells = [Cell]()
   private var needsSelection = false
 
@@ -137,6 +143,17 @@ class ThermostatTemperatureAdjustmentView: UIView {
       y: 0
     )
   }
+
+  private func closestCenterIndex(for contentOffset: CGPoint) -> Int? {
+    let targetPointX = contentOffset.x + width / 2
+    let centersX = cells.enumerated().map { Cell.Constants.minWidth / 2 + CGFloat($0.offset) * Cell.Constants.minWidth }
+    let sortedCentersX = centersX.sorted { abs($0 - targetPointX) < abs($1 - targetPointX) }
+    guard let closestCenter = sortedCentersX.first, let closestCenterIndex = centersX.index(of: closestCenter) else {
+      return nil
+    }
+
+    return closestCenterIndex
+  }
 }
 
 extension ThermostatTemperatureAdjustmentView: UIScrollViewDelegate {
@@ -145,15 +162,24 @@ extension ThermostatTemperatureAdjustmentView: UIScrollViewDelegate {
   }
 
   func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-    let targetPointX = targetContentOffset.pointee.x + width / 2
-    let centersX = cells.enumerated().map { Cell.Constants.minWidth / 2 + CGFloat($0.offset) * Cell.Constants.minWidth }
-    let sortedCentersX = centersX.sorted { abs($0 - targetPointX) < abs($1 - targetPointX) }
-    guard let closestCenter = sortedCentersX.first, let closestCenterIndex = centersX.index(of: closestCenter) else {
+    guard let centerIndex = closestCenterIndex(for: targetContentOffset.pointee) else {
       return
     }
 
-    targetContentOffset.pointee = contentOffset(for: closestCenterIndex)
-    selectedIndex = closestCenterIndex
+    targetContentOffset.pointee = contentOffset(for: centerIndex)
+  }
+
+  func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    guard let centerIndex = closestCenterIndex(for: scrollView.contentOffset) else {
+      return
+    }
+
+    selectedIndex = centerIndex
+
+    if let viewModel = viewModel, let selectedIndex = selectedIndex {
+      let temperature = viewModel.temperatureValues[selectedIndex]
+      selectionHandler(CGFloat(temperature))
+    }
   }
 }
 

@@ -15,44 +15,25 @@ extension URLRequest {
   static func get(url: URL, headers: [String: String] = [:]) -> URLRequest {
     var request = urlRequest(with: url, headers: headers)
     request.httpMethod = "GET"
+    request.setValue("application/json", forHTTPHeaderField: "Accept")
     return request
   }
 
-  static func put<T>(url: URL, headers: [String: String] = [:], json: Json<T>) -> URLRequest {
+  static func patch<T: Encodable>(url: URL, headers: [String: String] = [:], object: T) -> URLRequest {
     var request = urlRequest(with: url, headers: headers)
-    request.httpMethod = "PUT"
+    request.httpMethod = "PATCH"
+    request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
 
     do {
-      let data = try JSONSerialization.data(withJSONObject: json, options: [])
+      let data = try JSONEncoder().encode(object)
       request.httpBody = data
     }
     catch {
       // Error
-      Logger.error("Cannot serialize Json: \(json)")
+      Logger.error("Cannot serialize object: \(object)")
     }
 
-    return request
-  }
-
-  static func post<T>(url: URL, headers: [String: String] = [:], json: Json<T>) -> URLRequest {
-    var request = urlRequest(with: url, headers: headers)
-    request.httpMethod = "POST"
-
-    do {
-      let data = try JSONSerialization.data(withJSONObject: json, options: [])
-      request.httpBody = data
-    }
-    catch {
-      // Error
-      Logger.error("Cannot serialize Json: \(json)")
-    }
-
-    return request
-  }
-
-  static func delete(url: URL, headers: [String: String] = [:]) -> URLRequest {
-    var request = urlRequest(with: url, headers: headers)
-    request.httpMethod = "DELETE"
     return request
   }
 

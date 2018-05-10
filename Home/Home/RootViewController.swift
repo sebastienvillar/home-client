@@ -44,17 +44,17 @@ class RootViewController: UIViewController {
 
   private func refreshData() {
     dataSource.refresh { [weak self] success in
-      guard success else {
+      guard let `self` = self, success else {
         // Show error/offline screen depending on error
         // rootView.setup(with: ....)
         return
       }
 
-      if self?.controllers == nil {
+      if self.controllers == nil {
         // Setup controllers
-        let thermostatController = ThermostatController(dataSource: dataSource)
-        let awayController = AwayController(dataSource: dataSource)
-        self?.controllers = [
+        let thermostatController = ThermostatController(dataSource: self.dataSource)
+        let awayController = AwayController(dataSource: self.dataSource)
+        self.controllers = [
           thermostatController,
           awayController,
         ]
@@ -67,8 +67,8 @@ class RootViewController: UIViewController {
         )
 
         // Setup root view
-        rootView.setup(with: viewCollection)
-        rootView.setup(with: .ready)
+        self.rootView.setup(with: viewCollection)
+        self.rootView.setup(with: .ready)
       }
     }
   }

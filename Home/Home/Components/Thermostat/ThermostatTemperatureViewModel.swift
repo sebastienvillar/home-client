@@ -26,7 +26,7 @@ struct ThermostatTemperatureViewModel {
     switch model.status {
     case .on:
       switch model.mode {
-      case .heat:
+      case .warm:
         return .heating
       case .cool:
         return .cooling

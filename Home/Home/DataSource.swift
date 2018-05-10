@@ -43,11 +43,20 @@ class DataSource {
 
   // MARK: - Public
 
-  func refresh(completion: (_ success: Bool) -> Void) {
-    thermostatModel = ThermostatModel(temperature: 30, targetTemperature: 22, mode: .heat, status: .on)
+  func refresh(completion: @escaping (_ success: Bool) -> Void) {
     awayModel = AwayModel(method: .auto, value: .away)
-//    thermostatModel = root?.object(at: "thermostat")
-    completion(true)
+    ThermostatApi.get { response in
+      switch response {
+      case .success(let thermostatModel):
+        DispatchQueue.main.async {
+          self.thermostatModel = thermostatModel
+          completion(true)
+        }
+      case .failure:
+        completion(false)
+        break
+      }
+    }
   }
 
   func subscribeToChange(for key: ChangeKey, block: ChangeBlock) {
