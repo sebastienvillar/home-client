@@ -83,7 +83,7 @@ class UserView: UIView {
     // Subtitle
     if !subtitleLabel.isHidden {
       subtitleLabel.frame = CGRect(
-        x: (width - subtitleLabel.width) / 2,
+        x: (width - titleLabelSize.width) / 2,
         y: height - (height - labelsHeight) / 2 - subtitleLabelSize.height,
         width: subtitleLabelSize.width,
         height: subtitleLabelSize.height
