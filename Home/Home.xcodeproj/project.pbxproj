@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4D3B67BD209F944B00E86C18 /* UIFont+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B67BC209F944B00E86C18 /* UIFont+Palette.swift */; };
 		4D3B67BF209F956F00E86C18 /* ThermostatTemperatureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B67BE209F956F00E86C18 /* ThermostatTemperatureViewModel.swift */; };
-		4D3B67C4209F9A5800E86C18 /* Inter-UI-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4D3B67C3209F9A5800E86C18 /* Inter-UI-Regular.ttf */; };
 		4D3B67C7209FA00F00E86C18 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B67C6209FA00F00E86C18 /* UserController.swift */; };
 		4D3B67C9209FA01400E86C18 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B67C8209FA01400E86C18 /* UserModel.swift */; };
 		4D3B67CB209FA01900E86C18 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B67CA209FA01900E86C18 /* UserView.swift */; };
@@ -22,6 +21,7 @@
 		4D58C84C20A40B690021EE22 /* UsersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D58C84B20A40B690021EE22 /* UsersModel.swift */; };
 		4D58C84E20A40CB10021EE22 /* UsersApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D58C84D20A40CB10021EE22 /* UsersApi.swift */; };
 		4D58C85020A40D140021EE22 /* UsersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D58C84F20A40D140021EE22 /* UsersManager.swift */; };
+		4DAD411D20AA44B300E5F694 /* Inter-UI-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DAD411C20AA44B300E5F694 /* Inter-UI-Regular.ttf */; };
 		4DF1BB132075397C00D12514 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1BB122075397C00D12514 /* AppDelegate.swift */; };
 		4DF1BB1A2075397D00D12514 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DF1BB192075397D00D12514 /* Assets.xcassets */; };
 		4DF1BB1D2075397D00D12514 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DF1BB1B2075397D00D12514 /* LaunchScreen.storyboard */; };
@@ -42,7 +42,6 @@
 /* Begin PBXFileReference section */
 		4D3B67BC209F944B00E86C18 /* UIFont+Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Palette.swift"; sourceTree = "<group>"; };
 		4D3B67BE209F956F00E86C18 /* ThermostatTemperatureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermostatTemperatureViewModel.swift; sourceTree = "<group>"; };
-		4D3B67C3209F9A5800E86C18 /* Inter-UI-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-UI-Regular.ttf"; path = "Home/Resources/Fonts/Inter-UI-Regular.ttf"; sourceTree = SOURCE_ROOT; };
 		4D3B67C6209FA00F00E86C18 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		4D3B67C8209FA01400E86C18 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		4D3B67CA209FA01900E86C18 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
@@ -55,6 +54,8 @@
 		4D58C84B20A40B690021EE22 /* UsersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersModel.swift; sourceTree = "<group>"; };
 		4D58C84D20A40CB10021EE22 /* UsersApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersApi.swift; sourceTree = "<group>"; };
 		4D58C84F20A40D140021EE22 /* UsersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersManager.swift; sourceTree = "<group>"; };
+		4DAD411720AA442F00E5F694 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
+		4DAD411C20AA44B300E5F694 /* Inter-UI-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-UI-Regular.ttf"; path = "Home/Resources/Fonts/Inter-UI-Regular.ttf"; sourceTree = "<group>"; };
 		4DF1BB0F2075397C00D12514 /* Home.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Home.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DF1BB122075397C00D12514 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DF1BB192075397D00D12514 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -85,15 +86,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4D3B67C2209F9A4D00E86C18 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				4D3B67C3209F9A5800E86C18 /* Inter-UI-Regular.ttf */,
-			);
-			name = Fonts;
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 		4D3B67C5209FA00300E86C18 /* User */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +127,7 @@
 		4DF1BB062075397C00D12514 = {
 			isa = PBXGroup;
 			children = (
+				4DAD411C20AA44B300E5F694 /* Inter-UI-Regular.ttf */,
 				4DF1BB112075397C00D12514 /* Home */,
 				4DF1BB102075397C00D12514 /* Products */,
 			);
@@ -168,7 +161,7 @@
 		4DF1BB2520753A3100D12514 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				4D3B67C2209F9A4D00E86C18 /* Fonts */,
+				4DAD411720AA442F00E5F694 /* Fonts */,
 				4DF1BB192075397D00D12514 /* Assets.xcassets */,
 				4DF1BB1B2075397D00D12514 /* LaunchScreen.storyboard */,
 				4DF1BB1E2075397D00D12514 /* Info.plist */,
@@ -279,8 +272,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DF1BB1D2075397D00D12514 /* LaunchScreen.storyboard in Resources */,
-				4D3B67C4209F9A5800E86C18 /* Inter-UI-Regular.ttf in Resources */,
 				4DF1BB1A2075397D00D12514 /* Assets.xcassets in Resources */,
+				4DAD411D20AA44B300E5F694 /* Inter-UI-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
