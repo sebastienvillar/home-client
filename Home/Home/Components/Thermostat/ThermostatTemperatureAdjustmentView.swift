@@ -188,8 +188,7 @@ private class Cell: UIView {
     static let maxWidth: CGFloat = 120
     static let height: CGFloat = 50
 
-    static let minFont = UIFont.interUI(size: 20, weight: .regular)
-    static let maxFont = UIFont.interUI(size: 40, weight: .regular)
+    static let font = UIFont.interUI(size: 40, weight: .regular)
 
     static let minColor = UIColor.foregroundGray
     static let maxColor = UIColor.foregroundWhite
@@ -259,6 +258,8 @@ private class Cell: UIView {
       height: height
     )
 
+    let transform = label.transform
+    label.transform = .identity
     label.sizeToFit()
     label.frame = CGRect(
       x: (width - label.width) / 2 + 3, // Magic number so number looks centered (but proportional to scaling ratio)
@@ -266,11 +267,17 @@ private class Cell: UIView {
       width: label.width,
       height: label.height
     ).integral
+    label.transform = transform
   }
 
   // MARK: - Private
 
-  private let label = UILabel()
+  private let label: UILabel = {
+    let label = UILabel()
+    label.layer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+    label.font = Constants.font
+    return label
+  }()
 
   private let leftBorder: UIView = {
     let view = UIView()
@@ -288,7 +295,7 @@ private class Cell: UIView {
 
   func setupSubviews() {
     label.textColor = color(from: Constants.minColor, toColor: Constants.maxColor, ratio: scalingRatio)
-    label.font = font(from: Constants.minFont, toFont: Constants.maxFont, ratio: scalingRatio)
+    label.transform = CGAffineTransform(scaleX: 0.5 * (1 + scalingRatio), y: 0.5 * (1 + scalingRatio))
   }
 
   private func color(from fromColor: UIColor, toColor: UIColor, ratio: CGFloat) -> UIColor {
@@ -309,13 +316,5 @@ private class Cell: UIView {
       alpha: 1
     )
   }
-
-  private func font(from fromFont: UIFont, toFont: UIFont, ratio: CGFloat) -> UIFont {
-    return UIFont(
-      name: fromFont.fontName,
-      size: fromFont.pointSize + (toFont.pointSize - fromFont.pointSize) * ratio
-    )!
-  }
-
 }
 
