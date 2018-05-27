@@ -1,5 +1,5 @@
 //
-//  RootViewController.swift
+//  RootVC.swift
 //  Home
 //
 //  Created by Sebastien Villar on 04/04/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RootViewController: UIViewController {
+class RootVC: UIViewController {
 
   // MARK: - Public
 

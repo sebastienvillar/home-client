@@ -11,6 +11,7 @@
 		4D28C05920BB33A00022881E /* RootModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D28C05820BB33A00022881E /* RootModel.swift */; };
 		4D28C05B20BB34350022881E /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D28C05A20BB34350022881E /* NetworkSession.swift */; };
 		4D35137420BB41D80028B6F4 /* Inter-UI-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4D35137220BB41CF0028B6F4 /* Inter-UI-Regular.ttf */; };
+		4D35137620BB42B30028B6F4 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D35137520BB42B30028B6F4 /* AlertController.swift */; };
 		4D3B67BD209F944B00E86C18 /* UIFont+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B67BC209F944B00E86C18 /* UIFont+Palette.swift */; };
 		4D3B67BF209F956F00E86C18 /* ThermostatTemperatureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B67BE209F956F00E86C18 /* ThermostatTemperatureViewModel.swift */; };
 		4D3B67C7209FA00F00E86C18 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B67C6209FA00F00E86C18 /* UserController.swift */; };
@@ -33,7 +34,7 @@
 		4DF1BB672075575C00D12514 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1BB652075575C00D12514 /* Logger.swift */; };
 		4DF1BB682075575C00D12514 /* Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1BB662075575C00D12514 /* Json.swift */; };
 		4DF1BB6B2075577700D12514 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1BB692075577700D12514 /* DataSource.swift */; };
-		4DF1BB6C2075577700D12514 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1BB6A2075577700D12514 /* RootViewController.swift */; };
+		4DF1BB6C2075577700D12514 /* RootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1BB6A2075577700D12514 /* RootVC.swift */; };
 		4DF1BB6E2075577D00D12514 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1BB6D2075577D00D12514 /* RootView.swift */; };
 		4DF1BB75207557C100D12514 /* ThermostatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1BB71207557C100D12514 /* ThermostatModel.swift */; };
 		4DF1BB76207557C100D12514 /* ThermostatTemperatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1BB72207557C100D12514 /* ThermostatTemperatureView.swift */; };
@@ -46,6 +47,7 @@
 		4D28C05820BB33A00022881E /* RootModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootModel.swift; sourceTree = "<group>"; };
 		4D28C05A20BB34350022881E /* NetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; };
 		4D35137220BB41CF0028B6F4 /* Inter-UI-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-UI-Regular.ttf"; sourceTree = "<group>"; };
+		4D35137520BB42B30028B6F4 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		4D3B67BC209F944B00E86C18 /* UIFont+Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Palette.swift"; sourceTree = "<group>"; };
 		4D3B67BE209F956F00E86C18 /* ThermostatTemperatureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermostatTemperatureViewModel.swift; sourceTree = "<group>"; };
 		4D3B67C6209FA00F00E86C18 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
@@ -70,7 +72,7 @@
 		4DF1BB652075575C00D12514 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		4DF1BB662075575C00D12514 /* Json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Json.swift; sourceTree = "<group>"; };
 		4DF1BB692075577700D12514 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
-		4DF1BB6A2075577700D12514 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		4DF1BB6A2075577700D12514 /* RootVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootVC.swift; sourceTree = "<group>"; };
 		4DF1BB6D2075577D00D12514 /* RootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		4DF1BB71207557C100D12514 /* ThermostatModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThermostatModel.swift; sourceTree = "<group>"; };
 		4DF1BB72207557C100D12514 /* ThermostatTemperatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThermostatTemperatureView.swift; sourceTree = "<group>"; };
@@ -164,7 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				4DF1BB122075397C00D12514 /* AppDelegate.swift */,
-				4DF1BB6A2075577700D12514 /* RootViewController.swift */,
+				4DF1BB6A2075577700D12514 /* RootVC.swift */,
 				4DF1BB6D2075577D00D12514 /* RootView.swift */,
 				4DF1BB692075577700D12514 /* DataSource.swift */,
 				4D58C84020A3C6D10021EE22 /* Api */,
@@ -205,6 +207,7 @@
 				4DF1BB662075575C00D12514 /* Json.swift */,
 				4DF1BB652075575C00D12514 /* Logger.swift */,
 				4D28C05A20BB34350022881E /* NetworkSession.swift */,
+				4D35137520BB42B30028B6F4 /* AlertController.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -328,10 +331,11 @@
 				4DF1BB6E2075577D00D12514 /* RootView.swift in Sources */,
 				4DF1BB76207557C100D12514 /* ThermostatTemperatureView.swift in Sources */,
 				4D28C05620BB33230022881E /* RootApi.swift in Sources */,
+				4D35137620BB42B30028B6F4 /* AlertController.swift in Sources */,
 				4DF1BB632075571600D12514 /* URLRequest+Methods.swift in Sources */,
 				4D58C84E20A40CB10021EE22 /* UserApi.swift in Sources */,
 				4D58C85020A40D140021EE22 /* UsersManager.swift in Sources */,
-				4DF1BB6C2075577700D12514 /* RootViewController.swift in Sources */,
+				4DF1BB6C2075577700D12514 /* RootVC.swift in Sources */,
 				4DF1BB622075571600D12514 /* UIView+Frame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

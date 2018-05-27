@@ -31,8 +31,8 @@ class UsersManager {
         case .success(let httpResponse, let model):
           dataSource.updateIfNeeded(with: httpResponse, model: model)
           break
-        case .failure:
-          dataSource.refresh()
+        case .failure(let statusCode, let message):
+          AlertController.shared.show(request: "Patch User", statusCode: statusCode, message: message)
           break
         }
       }

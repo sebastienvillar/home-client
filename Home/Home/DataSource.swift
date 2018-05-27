@@ -65,7 +65,8 @@ class DataSource {
           self.usersModel = rootModel.users
           self.thermostatModel = rootModel.thermostat
           completion?(true)
-        case .failure:
+        case .failure(let statusCode, let message):
+          AlertController.shared.show(request: "Get Root", statusCode: statusCode, message: message)
           completion?(false)
         }
       }
