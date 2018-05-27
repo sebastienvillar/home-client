@@ -12,6 +12,7 @@
 		4D28C05B20BB34350022881E /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D28C05A20BB34350022881E /* NetworkSession.swift */; };
 		4D35137420BB41D80028B6F4 /* Inter-UI-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4D35137220BB41CF0028B6F4 /* Inter-UI-Regular.ttf */; };
 		4D35137620BB42B30028B6F4 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D35137520BB42B30028B6F4 /* AlertController.swift */; };
+		4D35137820BB510C0028B6F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D35137720BB510C0028B6F4 /* LaunchScreen.storyboard */; };
 		4D3B67BD209F944B00E86C18 /* UIFont+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B67BC209F944B00E86C18 /* UIFont+Palette.swift */; };
 		4D3B67BF209F956F00E86C18 /* ThermostatTemperatureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B67BE209F956F00E86C18 /* ThermostatTemperatureViewModel.swift */; };
 		4D3B67C7209FA00F00E86C18 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B67C6209FA00F00E86C18 /* UserController.swift */; };
@@ -27,7 +28,6 @@
 		4D58C85020A40D140021EE22 /* UsersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D58C84F20A40D140021EE22 /* UsersManager.swift */; };
 		4DF1BB132075397C00D12514 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1BB122075397C00D12514 /* AppDelegate.swift */; };
 		4DF1BB1A2075397D00D12514 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DF1BB192075397D00D12514 /* Assets.xcassets */; };
-		4DF1BB1D2075397D00D12514 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DF1BB1B2075397D00D12514 /* LaunchScreen.storyboard */; };
 		4DF1BB612075571600D12514 /* UIColor+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1BB5E2075571600D12514 /* UIColor+Palette.swift */; };
 		4DF1BB622075571600D12514 /* UIView+Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1BB5F2075571600D12514 /* UIView+Frame.swift */; };
 		4DF1BB632075571600D12514 /* URLRequest+Methods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1BB602075571600D12514 /* URLRequest+Methods.swift */; };
@@ -48,6 +48,7 @@
 		4D28C05A20BB34350022881E /* NetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; };
 		4D35137220BB41CF0028B6F4 /* Inter-UI-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-UI-Regular.ttf"; sourceTree = "<group>"; };
 		4D35137520BB42B30028B6F4 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
+		4D35137720BB510C0028B6F4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4D3B67BC209F944B00E86C18 /* UIFont+Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Palette.swift"; sourceTree = "<group>"; };
 		4D3B67BE209F956F00E86C18 /* ThermostatTemperatureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermostatTemperatureViewModel.swift; sourceTree = "<group>"; };
 		4D3B67C6209FA00F00E86C18 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
@@ -64,7 +65,6 @@
 		4DF1BB0F2075397C00D12514 /* Home.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Home.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DF1BB122075397C00D12514 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DF1BB192075397D00D12514 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4DF1BB1C2075397D00D12514 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4DF1BB1E2075397D00D12514 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DF1BB5E2075571600D12514 /* UIColor+Palette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Palette.swift"; sourceTree = "<group>"; };
 		4DF1BB5F2075571600D12514 /* UIView+Frame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Frame.swift"; sourceTree = "<group>"; };
@@ -184,7 +184,7 @@
 			children = (
 				4D35137320BB41D00028B6F4 /* Fonts */,
 				4DF1BB192075397D00D12514 /* Assets.xcassets */,
-				4DF1BB1B2075397D00D12514 /* LaunchScreen.storyboard */,
+				4D35137720BB510C0028B6F4 /* LaunchScreen.storyboard */,
 				4DF1BB1E2075397D00D12514 /* Info.plist */,
 			);
 			path = Resources;
@@ -294,8 +294,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DF1BB1D2075397D00D12514 /* LaunchScreen.storyboard in Resources */,
 				4D35137420BB41D80028B6F4 /* Inter-UI-Regular.ttf in Resources */,
+				4D35137820BB510C0028B6F4 /* LaunchScreen.storyboard in Resources */,
 				4DF1BB1A2075397D00D12514 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,17 +341,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		4DF1BB1B2075397D00D12514 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4DF1BB1C2075397D00D12514 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		4DF1BB1F2075397D00D12514 /* Debug */ = {
@@ -482,7 +471,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sebastienvillar.Home;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -500,7 +489,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sebastienvillar.Home;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
