@@ -32,42 +32,58 @@ class DataSource {
   // Models
   var thermostatModel: ThermostatModel? {
     didSet {
-      notifyOfChange(for: .thermostat)
+      if oldValue != thermostatModel {
+        notifyOfChange(for: .thermostat)
+      }
     }
   }
 
   var usersModel: UsersModel? {
     didSet {
-      notifyOfChange(for: .users)
+      if oldValue != usersModel {
+        notifyOfChange(for: .users)
+      }
     }
   }
 
   var userModel: UserModel? {
     didSet {
-      notifyOfChange(for: .user)
+      if oldValue != userModel {
+        notifyOfChange(for: .user)
+      }
     }
   }
 
   // MARK: - Public
 
-  func refresh(completion: @escaping (_ success: Bool) -> Void) {
-    let group = DispatchGroup()
-    var success = true
-    let handler = { (aSuccess: Bool) in
-      success = success && aSuccess
-      group.leave()
+  func refresh(completion: ((_ success: Bool) -> Void)? = nil) {
+    RootApi.get { response in
+      DispatchQueue.main.async {
+        switch response {
+        case .success(let rootModel):
+          self.userModel = rootModel.user
+          self.usersModel = rootModel.users
+          self.thermostatModel = rootModel.thermostat
+          completion?(true)
+        case .failure:
+          completion?(false)
+        }
+      }
+    }
+  }
+
+  func updateIfNeeded(with response: HTTPURLResponse, model: RootModel?) {
+    guard NetworkSession.shared.isLastResponse(response) else {
+      return
     }
 
-    group.enter()
-    refreshThermostat(completion: handler)
-    group.enter()
-    refreshUsers(completion: handler)
-    group.enter()
-    refreshUser(completion: handler)
-
-    group.notify(queue: .main) {
-      completion(success)
+    guard let model = model else {
+      return
     }
+
+    userModel = model.user
+    usersModel = model.users
+    thermostatModel = model.thermostat
   }
 
   func subscribeToChange(for key: ChangeKey, block: ChangeBlock) {
@@ -99,47 +115,5 @@ class DataSource {
 
   private func notifyOfChange(for key: ChangeKey) {
     subscribedBlocks[key]?.forEach { $0.block() }
-  }
-
-  private func refreshThermostat(completion: @escaping (_ success: Bool) -> Void) {
-    ThermostatApi.get { response in
-      DispatchQueue.main.async {
-        switch response {
-        case .success(let thermostatModel):
-          self.thermostatModel = thermostatModel
-          completion(true)
-        case .failure:
-          completion(false)
-        }
-      }
-    }
-  }
-
-  private func refreshUsers(completion: @escaping (_ success: Bool) -> Void) {
-    UsersApi.getUsers { response in
-      DispatchQueue.main.async {
-        switch response {
-        case .success(let usersModel):
-          self.usersModel = usersModel
-          completion(true)
-        case .failure:
-          completion(false)
-        }
-      }
-    }
-  }
-
-  private func refreshUser(completion: @escaping (_ success: Bool) -> Void) {
-    UsersApi.getUser { response in
-      DispatchQueue.main.async {
-        switch response {
-        case .success(let userModel):
-          self.userModel = userModel
-          completion(true)
-        case .failure:
-          completion(false)
-        }
-      }
-    }
   }
 }

@@ -9,7 +9,16 @@
 import Foundation
 import UIKit
 
-struct ThermostatModel: Codable {
+struct ThermostatModel: Codable, Equatable {
+  static func == (lhs: ThermostatModel, rhs: ThermostatModel) -> Bool {
+    return (
+      lhs.temperature == rhs.temperature &&
+      lhs.targetTemperature == rhs.targetTemperature &&
+      lhs.mode == rhs.mode &&
+      lhs.status == rhs.status
+    )
+  }
+
 
   // MARK: - Public
 

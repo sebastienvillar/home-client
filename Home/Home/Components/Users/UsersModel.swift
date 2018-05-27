@@ -7,9 +7,8 @@
 //
 
 import Foundation
-import UIKit
 
-struct UsersModel: Decodable {
+struct UsersModel: Decodable, Equatable {
 
   // MARK: - Public
 

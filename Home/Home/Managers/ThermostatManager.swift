@@ -21,11 +21,15 @@ class ThermostatManager {
     dataSource.thermostatModel = thermostatModel
 
     ThermostatApi.patch(model: thermostatModel) { response in
-      switch response {
-      case .success:
-        break
-      case .failure:
-        break
+      DispatchQueue.main.async {
+        switch response {
+        case .success(let httpResponse, let model):
+          dataSource.updateIfNeeded(with: httpResponse, model: model)
+          break
+        case .failure:
+          dataSource.refresh()
+          break
+        }
       }
     }
   }

@@ -9,8 +9,8 @@
 import Foundation
 
 struct Api {
-  static let endpoint = "http://192.168.0.3:8080"
+  static let endpoint = "http://192.168.0.6:8080"
 
-  typealias FetchCompletion<T: Decodable> = (_ response: URLSession.FetchResponse<T>) -> Void
-  typealias SetCompletion = (_ response: URLSession.SetResponse) -> Void
+  typealias FetchCompletion<T: Decodable> = (_ response: NetworkSession.FetchResponse<T>) -> Void
+  typealias SetCompletion<T: Decodable> = (_ response: NetworkSession.SetResponse<T>) -> Void
 }

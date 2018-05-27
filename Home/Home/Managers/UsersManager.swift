@@ -25,12 +25,16 @@ class UsersManager {
 
     dataSource.userModel = userModel
 
-    UsersApi.patchUser(model: userModel) { response in
-      switch response {
-      case .success:
-        break
-      case .failure:
-        break
+    UserApi.patch(model: userModel) { response in
+      DispatchQueue.main.async {
+        switch response {
+        case .success(let httpResponse, let model):
+          dataSource.updateIfNeeded(with: httpResponse, model: model)
+          break
+        case .failure:
+          dataSource.refresh()
+          break
+        }
       }
     }
   }

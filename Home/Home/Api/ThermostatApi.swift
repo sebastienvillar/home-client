@@ -14,13 +14,8 @@ class ThermostatApi {
     static let endpoint = "\(Api.endpoint)/thermostat"
   }
 
-  static func get(completion: @escaping Api.FetchCompletion<ThermostatModel>) {
-    let request = URLRequest.get(url: URL(string: Constants.endpoint)!)
-    URLSession.shared.object(with: request, completion: completion)
-  }
-
-  static func patch(model: ThermostatModel, completion: @escaping Api.SetCompletion) {
+  static func patch(model: ThermostatModel, completion: @escaping Api.SetCompletion<RootModel>) {
     let request = URLRequest.patch(url: URL(string: Constants.endpoint)!, object: model)
-    URLSession.shared.send(with: request, completion: completion)
+    NetworkSession.shared.send(with: request, completion: completion)
   }
 }

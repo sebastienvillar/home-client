@@ -8,7 +8,14 @@
 
 import Foundation
 
-struct UserModel: Codable {
+struct UserModel: Codable, Equatable {
+
+  static func == (lhs: UserModel, rhs: UserModel) -> Bool {
+    return (
+      lhs.awayMethod == rhs.awayMethod &&
+        lhs.awayValue == rhs.awayValue
+    )
+  }
 
   // MARK: - Public
 

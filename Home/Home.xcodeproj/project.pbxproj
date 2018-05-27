@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D28C05620BB33230022881E /* RootApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D28C05520BB33230022881E /* RootApi.swift */; };
+		4D28C05920BB33A00022881E /* RootModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D28C05820BB33A00022881E /* RootModel.swift */; };
+		4D28C05B20BB34350022881E /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D28C05A20BB34350022881E /* NetworkSession.swift */; };
+		4D35137420BB41D80028B6F4 /* Inter-UI-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4D35137220BB41CF0028B6F4 /* Inter-UI-Regular.ttf */; };
 		4D3B67BD209F944B00E86C18 /* UIFont+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B67BC209F944B00E86C18 /* UIFont+Palette.swift */; };
 		4D3B67BF209F956F00E86C18 /* ThermostatTemperatureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B67BE209F956F00E86C18 /* ThermostatTemperatureViewModel.swift */; };
 		4D3B67C7209FA00F00E86C18 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B67C6209FA00F00E86C18 /* UserController.swift */; };
@@ -16,12 +20,10 @@
 		4D3B67CF209FEAFC00E86C18 /* ThermostatTemperatureAdjustmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B67CE209FEAFC00E86C18 /* ThermostatTemperatureAdjustmentViewModel.swift */; };
 		4D58C84220A3C6E30021EE22 /* ThermostatApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D58C84120A3C6E30021EE22 /* ThermostatApi.swift */; };
 		4D58C84420A3C7280021EE22 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D58C84320A3C7280021EE22 /* Api.swift */; };
-		4D58C84620A3C9730021EE22 /* URLSession+Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D58C84520A3C9730021EE22 /* URLSession+Json.swift */; };
 		4D58C84920A3DE7E0021EE22 /* ThermostatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D58C84820A3DE7E0021EE22 /* ThermostatManager.swift */; };
 		4D58C84C20A40B690021EE22 /* UsersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D58C84B20A40B690021EE22 /* UsersModel.swift */; };
-		4D58C84E20A40CB10021EE22 /* UsersApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D58C84D20A40CB10021EE22 /* UsersApi.swift */; };
+		4D58C84E20A40CB10021EE22 /* UserApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D58C84D20A40CB10021EE22 /* UserApi.swift */; };
 		4D58C85020A40D140021EE22 /* UsersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D58C84F20A40D140021EE22 /* UsersManager.swift */; };
-		4DAD411D20AA44B300E5F694 /* Inter-UI-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DAD411C20AA44B300E5F694 /* Inter-UI-Regular.ttf */; };
 		4DF1BB132075397C00D12514 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1BB122075397C00D12514 /* AppDelegate.swift */; };
 		4DF1BB1A2075397D00D12514 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DF1BB192075397D00D12514 /* Assets.xcassets */; };
 		4DF1BB1D2075397D00D12514 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DF1BB1B2075397D00D12514 /* LaunchScreen.storyboard */; };
@@ -40,6 +42,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D28C05520BB33230022881E /* RootApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootApi.swift; sourceTree = "<group>"; };
+		4D28C05820BB33A00022881E /* RootModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootModel.swift; sourceTree = "<group>"; };
+		4D28C05A20BB34350022881E /* NetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; };
+		4D35137220BB41CF0028B6F4 /* Inter-UI-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-UI-Regular.ttf"; sourceTree = "<group>"; };
 		4D3B67BC209F944B00E86C18 /* UIFont+Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Palette.swift"; sourceTree = "<group>"; };
 		4D3B67BE209F956F00E86C18 /* ThermostatTemperatureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermostatTemperatureViewModel.swift; sourceTree = "<group>"; };
 		4D3B67C6209FA00F00E86C18 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
@@ -49,13 +55,10 @@
 		4D3B67CE209FEAFC00E86C18 /* ThermostatTemperatureAdjustmentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermostatTemperatureAdjustmentViewModel.swift; sourceTree = "<group>"; };
 		4D58C84120A3C6E30021EE22 /* ThermostatApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermostatApi.swift; sourceTree = "<group>"; };
 		4D58C84320A3C7280021EE22 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
-		4D58C84520A3C9730021EE22 /* URLSession+Json.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Json.swift"; sourceTree = "<group>"; };
 		4D58C84820A3DE7E0021EE22 /* ThermostatManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermostatManager.swift; sourceTree = "<group>"; };
 		4D58C84B20A40B690021EE22 /* UsersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersModel.swift; sourceTree = "<group>"; };
-		4D58C84D20A40CB10021EE22 /* UsersApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersApi.swift; sourceTree = "<group>"; };
+		4D58C84D20A40CB10021EE22 /* UserApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApi.swift; sourceTree = "<group>"; };
 		4D58C84F20A40D140021EE22 /* UsersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersManager.swift; sourceTree = "<group>"; };
-		4DAD411720AA442F00E5F694 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
-		4DAD411C20AA44B300E5F694 /* Inter-UI-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-UI-Regular.ttf"; path = "Home/Resources/Fonts/Inter-UI-Regular.ttf"; sourceTree = "<group>"; };
 		4DF1BB0F2075397C00D12514 /* Home.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Home.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DF1BB122075397C00D12514 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DF1BB192075397D00D12514 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -86,6 +89,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D28C05720BB33980022881E /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				4D28C05820BB33A00022881E /* RootModel.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		4D35137320BB41D00028B6F4 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				4D35137220BB41CF0028B6F4 /* Inter-UI-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		4D3B67C5209FA00300E86C18 /* User */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,8 +120,9 @@
 			isa = PBXGroup;
 			children = (
 				4D58C84320A3C7280021EE22 /* Api.swift */,
+				4D28C05520BB33230022881E /* RootApi.swift */,
 				4D58C84120A3C6E30021EE22 /* ThermostatApi.swift */,
-				4D58C84D20A40CB10021EE22 /* UsersApi.swift */,
+				4D58C84D20A40CB10021EE22 /* UserApi.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -127,7 +147,6 @@
 		4DF1BB062075397C00D12514 = {
 			isa = PBXGroup;
 			children = (
-				4DAD411C20AA44B300E5F694 /* Inter-UI-Regular.ttf */,
 				4DF1BB112075397C00D12514 /* Home */,
 				4DF1BB102075397C00D12514 /* Products */,
 			);
@@ -161,7 +180,7 @@
 		4DF1BB2520753A3100D12514 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				4DAD411720AA442F00E5F694 /* Fonts */,
+				4D35137320BB41D00028B6F4 /* Fonts */,
 				4DF1BB192075397D00D12514 /* Assets.xcassets */,
 				4DF1BB1B2075397D00D12514 /* LaunchScreen.storyboard */,
 				4DF1BB1E2075397D00D12514 /* Info.plist */,
@@ -176,7 +195,6 @@
 				4D3B67BC209F944B00E86C18 /* UIFont+Palette.swift */,
 				4DF1BB5F2075571600D12514 /* UIView+Frame.swift */,
 				4DF1BB602075571600D12514 /* URLRequest+Methods.swift */,
-				4D58C84520A3C9730021EE22 /* URLSession+Json.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -186,6 +204,7 @@
 			children = (
 				4DF1BB662075575C00D12514 /* Json.swift */,
 				4DF1BB652075575C00D12514 /* Logger.swift */,
+				4D28C05A20BB34350022881E /* NetworkSession.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -193,6 +212,7 @@
 		4DF1BB6F207557A200D12514 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				4D28C05720BB33980022881E /* Root */,
 				4D58C84A20A40B600021EE22 /* Users */,
 				4D3B67C5209FA00300E86C18 /* User */,
 				4DF1BB70207557A900D12514 /* Thermostat */,
@@ -272,8 +292,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DF1BB1D2075397D00D12514 /* LaunchScreen.storyboard in Resources */,
+				4D35137420BB41D80028B6F4 /* Inter-UI-Regular.ttf in Resources */,
 				4DF1BB1A2075397D00D12514 /* Assets.xcassets in Resources */,
-				4DAD411D20AA44B300E5F694 /* Inter-UI-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,11 +323,13 @@
 				4DF1BB78207557C100D12514 /* ThermostatTemperatureAdjustmentView.swift in Sources */,
 				4D58C84920A3DE7E0021EE22 /* ThermostatManager.swift in Sources */,
 				4D58C84420A3C7280021EE22 /* Api.swift in Sources */,
-				4D58C84620A3C9730021EE22 /* URLSession+Json.swift in Sources */,
+				4D28C05920BB33A00022881E /* RootModel.swift in Sources */,
+				4D28C05B20BB34350022881E /* NetworkSession.swift in Sources */,
 				4DF1BB6E2075577D00D12514 /* RootView.swift in Sources */,
 				4DF1BB76207557C100D12514 /* ThermostatTemperatureView.swift in Sources */,
+				4D28C05620BB33230022881E /* RootApi.swift in Sources */,
 				4DF1BB632075571600D12514 /* URLRequest+Methods.swift in Sources */,
-				4D58C84E20A40CB10021EE22 /* UsersApi.swift in Sources */,
+				4D58C84E20A40CB10021EE22 /* UserApi.swift in Sources */,
 				4D58C85020A40D140021EE22 /* UsersManager.swift in Sources */,
 				4DF1BB6C2075577700D12514 /* RootViewController.swift in Sources */,
 				4DF1BB622075571600D12514 /* UIView+Frame.swift in Sources */,
