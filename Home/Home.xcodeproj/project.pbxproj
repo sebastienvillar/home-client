@@ -13,6 +13,13 @@
 		4D35137420BB41D80028B6F4 /* Inter-UI-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4D35137220BB41CF0028B6F4 /* Inter-UI-Regular.ttf */; };
 		4D35137620BB42B30028B6F4 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D35137520BB42B30028B6F4 /* AlertController.swift */; };
 		4D35137820BB510C0028B6F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D35137720BB510C0028B6F4 /* LaunchScreen.storyboard */; };
+		4D35137B20BCA78D0028B6F4 /* LightModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D35137A20BCA78D0028B6F4 /* LightModel.swift */; };
+		4D35137D20BCB4A00028B6F4 /* LightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D35137C20BCB4A00028B6F4 /* LightView.swift */; };
+		4D35137F20BCB4A50028B6F4 /* LightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D35137E20BCB4A50028B6F4 /* LightsView.swift */; };
+		4D35138120BCB6660028B6F4 /* LightViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D35138020BCB6660028B6F4 /* LightViewModel.swift */; };
+		4D35138520BCB99A0028B6F4 /* LightsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D35138420BCB99A0028B6F4 /* LightsController.swift */; };
+		4D35138720BCC5E10028B6F4 /* LightsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D35138620BCC5E10028B6F4 /* LightsApi.swift */; };
+		4D35138920BCC6130028B6F4 /* LightsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D35138820BCC6130028B6F4 /* LightsManager.swift */; };
 		4D3B67BD209F944B00E86C18 /* UIFont+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B67BC209F944B00E86C18 /* UIFont+Palette.swift */; };
 		4D3B67BF209F956F00E86C18 /* ThermostatTemperatureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B67BE209F956F00E86C18 /* ThermostatTemperatureViewModel.swift */; };
 		4D3B67C7209FA00F00E86C18 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B67C6209FA00F00E86C18 /* UserController.swift */; };
@@ -49,6 +56,13 @@
 		4D35137220BB41CF0028B6F4 /* Inter-UI-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-UI-Regular.ttf"; sourceTree = "<group>"; };
 		4D35137520BB42B30028B6F4 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		4D35137720BB510C0028B6F4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4D35137A20BCA78D0028B6F4 /* LightModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightModel.swift; sourceTree = "<group>"; };
+		4D35137C20BCB4A00028B6F4 /* LightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightView.swift; sourceTree = "<group>"; };
+		4D35137E20BCB4A50028B6F4 /* LightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightsView.swift; sourceTree = "<group>"; };
+		4D35138020BCB6660028B6F4 /* LightViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightViewModel.swift; sourceTree = "<group>"; };
+		4D35138420BCB99A0028B6F4 /* LightsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightsController.swift; sourceTree = "<group>"; };
+		4D35138620BCC5E10028B6F4 /* LightsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightsApi.swift; sourceTree = "<group>"; };
+		4D35138820BCC6130028B6F4 /* LightsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightsManager.swift; sourceTree = "<group>"; };
 		4D3B67BC209F944B00E86C18 /* UIFont+Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Palette.swift"; sourceTree = "<group>"; };
 		4D3B67BE209F956F00E86C18 /* ThermostatTemperatureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermostatTemperatureViewModel.swift; sourceTree = "<group>"; };
 		4D3B67C6209FA00F00E86C18 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
@@ -94,7 +108,9 @@
 		4D28C05720BB33980022881E /* Root */ = {
 			isa = PBXGroup;
 			children = (
+				4DF1BB6A2075577700D12514 /* RootVC.swift */,
 				4D28C05820BB33A00022881E /* RootModel.swift */,
+				4DF1BB6D2075577D00D12514 /* RootView.swift */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -107,21 +123,35 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		4D3B67C5209FA00300E86C18 /* User */ = {
+		4D35137920BCA7770028B6F4 /* Lights */ = {
+			isa = PBXGroup;
+			children = (
+				4D35138420BCB99A0028B6F4 /* LightsController.swift */,
+				4D35137A20BCA78D0028B6F4 /* LightModel.swift */,
+				4D35137C20BCB4A00028B6F4 /* LightView.swift */,
+				4D35138020BCB6660028B6F4 /* LightViewModel.swift */,
+				4D35137E20BCB4A50028B6F4 /* LightsView.swift */,
+			);
+			path = Lights;
+			sourceTree = "<group>";
+		};
+		4D3B67C5209FA00300E86C18 /* Users */ = {
 			isa = PBXGroup;
 			children = (
 				4D3B67C6209FA00F00E86C18 /* UserController.swift */,
 				4D3B67C8209FA01400E86C18 /* UserModel.swift */,
 				4D3B67CA209FA01900E86C18 /* UserView.swift */,
 				4D3B67CC209FA01E00E86C18 /* UserViewModel.swift */,
+				4D58C84B20A40B690021EE22 /* UsersModel.swift */,
 			);
-			path = User;
+			path = Users;
 			sourceTree = "<group>";
 		};
 		4D58C84020A3C6D10021EE22 /* Api */ = {
 			isa = PBXGroup;
 			children = (
 				4D58C84320A3C7280021EE22 /* Api.swift */,
+				4D35138620BCC5E10028B6F4 /* LightsApi.swift */,
 				4D28C05520BB33230022881E /* RootApi.swift */,
 				4D58C84120A3C6E30021EE22 /* ThermostatApi.swift */,
 				4D58C84D20A40CB10021EE22 /* UserApi.swift */,
@@ -132,18 +162,11 @@
 		4D58C84720A3DE190021EE22 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				4D35138820BCC6130028B6F4 /* LightsManager.swift */,
 				4D58C84820A3DE7E0021EE22 /* ThermostatManager.swift */,
 				4D58C84F20A40D140021EE22 /* UsersManager.swift */,
 			);
 			path = Managers;
-			sourceTree = "<group>";
-		};
-		4D58C84A20A40B600021EE22 /* Users */ = {
-			isa = PBXGroup;
-			children = (
-				4D58C84B20A40B690021EE22 /* UsersModel.swift */,
-			);
-			path = Users;
 			sourceTree = "<group>";
 		};
 		4DF1BB062075397C00D12514 = {
@@ -166,8 +189,6 @@
 			isa = PBXGroup;
 			children = (
 				4DF1BB122075397C00D12514 /* AppDelegate.swift */,
-				4DF1BB6A2075577700D12514 /* RootVC.swift */,
-				4DF1BB6D2075577D00D12514 /* RootView.swift */,
 				4DF1BB692075577700D12514 /* DataSource.swift */,
 				4D58C84020A3C6D10021EE22 /* Api */,
 				4D58C84720A3DE190021EE22 /* Managers */,
@@ -216,8 +237,8 @@
 			isa = PBXGroup;
 			children = (
 				4D28C05720BB33980022881E /* Root */,
-				4D58C84A20A40B600021EE22 /* Users */,
-				4D3B67C5209FA00300E86C18 /* User */,
+				4D35137920BCA7770028B6F4 /* Lights */,
+				4D3B67C5209FA00300E86C18 /* Users */,
 				4DF1BB70207557A900D12514 /* Thermostat */,
 			);
 			path = Components;
@@ -314,8 +335,11 @@
 				4D3B67BF209F956F00E86C18 /* ThermostatTemperatureViewModel.swift in Sources */,
 				4D3B67CF209FEAFC00E86C18 /* ThermostatTemperatureAdjustmentViewModel.swift in Sources */,
 				4DF1BB672075575C00D12514 /* Logger.swift in Sources */,
+				4D35138120BCB6660028B6F4 /* LightViewModel.swift in Sources */,
 				4D3B67C7209FA00F00E86C18 /* UserController.swift in Sources */,
 				4D3B67CD209FA01E00E86C18 /* UserViewModel.swift in Sources */,
+				4D35137F20BCB4A50028B6F4 /* LightsView.swift in Sources */,
+				4D35138720BCC5E10028B6F4 /* LightsApi.swift in Sources */,
 				4DF1BB132075397C00D12514 /* AppDelegate.swift in Sources */,
 				4DF1BB612075571600D12514 /* UIColor+Palette.swift in Sources */,
 				4D3B67BD209F944B00E86C18 /* UIFont+Palette.swift in Sources */,
@@ -325,16 +349,20 @@
 				4DF1BB682075575C00D12514 /* Json.swift in Sources */,
 				4DF1BB78207557C100D12514 /* ThermostatTemperatureAdjustmentView.swift in Sources */,
 				4D58C84920A3DE7E0021EE22 /* ThermostatManager.swift in Sources */,
+				4D35137B20BCA78D0028B6F4 /* LightModel.swift in Sources */,
 				4D58C84420A3C7280021EE22 /* Api.swift in Sources */,
 				4D28C05920BB33A00022881E /* RootModel.swift in Sources */,
 				4D28C05B20BB34350022881E /* NetworkSession.swift in Sources */,
 				4DF1BB6E2075577D00D12514 /* RootView.swift in Sources */,
 				4DF1BB76207557C100D12514 /* ThermostatTemperatureView.swift in Sources */,
+				4D35138920BCC6130028B6F4 /* LightsManager.swift in Sources */,
 				4D28C05620BB33230022881E /* RootApi.swift in Sources */,
+				4D35138520BCB99A0028B6F4 /* LightsController.swift in Sources */,
 				4D35137620BB42B30028B6F4 /* AlertController.swift in Sources */,
 				4DF1BB632075571600D12514 /* URLRequest+Methods.swift in Sources */,
 				4D58C84E20A40CB10021EE22 /* UserApi.swift in Sources */,
 				4D58C85020A40D140021EE22 /* UsersManager.swift in Sources */,
+				4D35137D20BCB4A00028B6F4 /* LightView.swift in Sources */,
 				4DF1BB6C2075577700D12514 /* RootVC.swift in Sources */,
 				4DF1BB622075571600D12514 /* UIView+Frame.swift in Sources */,
 			);

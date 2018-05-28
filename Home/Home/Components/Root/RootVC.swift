@@ -54,16 +54,19 @@ class RootVC: UIViewController {
         // Setup controllers
         let thermostatController = ThermostatController(dataSource: self.dataSource)
         let userController = UserController(dataSource: self.dataSource)
+        let lightsController = LightsController(dataSource: self.dataSource)
         self.controllers = [
           thermostatController,
           userController,
+          lightsController,
         ]
 
         // Setups view collection
         let viewCollection = RootView.ViewCollection(
           thermostatTemperatureView: thermostatController.temperatureView,
           thermostatTemperatureAdjustmentView: thermostatController.temperatureAdjustmentView,
-          userView: userController.userView
+          userView: userController.userView,
+          lightsView: lightsController.lightsView
         )
 
         // Setup root view

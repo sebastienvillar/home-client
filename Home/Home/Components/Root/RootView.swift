@@ -14,7 +14,7 @@ class RootView: UIScrollView {
   private struct Constants {
     static let paddingHorizontal: CGFloat = 35
     static let paddingVertical: CGFloat = 23
-    static let adjustmentViewMarginTop: CGFloat = 20
+    static let interMarginVertical: CGFloat = 47
   }
 
   // MARK: - Public
@@ -29,12 +29,14 @@ class RootView: UIScrollView {
     let thermostatTemperatureView: UIView
     let thermostatTemperatureAdjustmentView: UIView
     let userView: UIView
+    let lightsView: UIView
 
     var allViews: [UIView] {
       return [
         thermostatTemperatureView,
         thermostatTemperatureAdjustmentView,
         userView,
+        lightsView
       ]
     }
   }
@@ -88,11 +90,20 @@ class RootView: UIScrollView {
       height: viewCollection.userView.height
     )
 
+    // Lights view
+    let lightsViewSize = viewCollection.lightsView.sizeThatFits(CGSize(width: width - 2 * Constants.paddingHorizontal, height: .greatestFiniteMagnitude))
+    viewCollection.lightsView.frame = CGRect(
+      x: Constants.paddingHorizontal,
+      y: viewCollection.userView.bottom + Constants.interMarginVertical,
+      width: lightsViewSize.width,
+      height: lightsViewSize.height
+    )
+
     // Thermostat temperature adjustment
     viewCollection.thermostatTemperatureAdjustmentView.sizeToFit()
     viewCollection.thermostatTemperatureAdjustmentView.frame = CGRect(
       x: 0,
-      y: viewCollection.userView.bottom + Constants.adjustmentViewMarginTop,
+      y: viewCollection.lightsView.bottom + Constants.interMarginVertical,
       width: width,
       height: viewCollection.thermostatTemperatureAdjustmentView.height
     )

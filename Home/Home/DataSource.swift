@@ -14,6 +14,7 @@ class DataSource {
     case thermostat
     case users
     case user
+    case lights
   }
 
   struct ChangeBlock: Equatable {
@@ -54,6 +55,14 @@ class DataSource {
     }
   }
 
+  var lightModels: [LightModel]? {
+    didSet {
+      if oldValue != lightModels {
+        notifyOfChange(for: .lights)
+      }
+    }
+  }
+
   // MARK: - Public
 
   func refresh(completion: ((_ success: Bool) -> Void)? = nil) {
@@ -64,6 +73,7 @@ class DataSource {
           self.userModel = rootModel.user
           self.usersModel = rootModel.users
           self.thermostatModel = rootModel.thermostat
+          self.lightModels = rootModel.lights
           completion?(true)
         case .failure(let statusCode, let message):
           AlertController.shared.show(request: "Get Root", statusCode: statusCode, message: message)
@@ -85,6 +95,7 @@ class DataSource {
     userModel = model.user
     usersModel = model.users
     thermostatModel = model.thermostat
+    lightModels = model.lights
   }
 
   func subscribeToChange(for key: ChangeKey, block: ChangeBlock) {

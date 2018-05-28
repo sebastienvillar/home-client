@@ -15,4 +15,5 @@ struct RootModel: Decodable, Equatable {
   let user: UserModel
   let users: UsersModel
   let thermostat: ThermostatModel
+  let lights: [LightModel]
 }
