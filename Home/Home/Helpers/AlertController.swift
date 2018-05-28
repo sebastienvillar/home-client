@@ -28,6 +28,10 @@ class AlertController {
       return
     }
 
+    guard rootVC.presentedViewController == nil else {
+      return
+    }
+
     alertWindow.isHidden = false
     alertWindow.frame = window?.frame ?? .zero
     alertWindow.makeKeyAndVisible()
