@@ -12,7 +12,7 @@ import UIKit
 class UsersManager {
 
   static func setUserAwayMethod(_ awayMethod: UserModel.AwayMethod, awayValue: UserModel.AwayValue?, dataSource: DataSource) {
-    guard var userModel = dataSource.userModel else {
+    guard var userModel = dataSource.userModel, var usersModel = dataSource.usersModel else {
       return
     }
 
@@ -23,7 +23,11 @@ class UsersManager {
       userModel.keysToEncode.append(UserModel.CodingKeys.awayValue)
     }
 
+    // Let's assume I'm the only user so there's no UI glitch
+    usersModel.awayValue = .away
+
     dataSource.userModel = userModel
+    dataSource.usersModel = usersModel
 
     UserApi.patch(model: userModel) { response in
       DispatchQueue.main.async {

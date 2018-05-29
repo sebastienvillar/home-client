@@ -32,6 +32,11 @@ class RootVC: UIViewController {
     // Start loading
     rootView.setup(with: .loading)
 
+    // Subscribe to changes
+    dataSource.subscribeToChanges(for: [.users, .user, .thermostat, .lights], block: DataSource.ChangeBlock(block: { [weak self] in
+      self?.view.setNeedsLayout()
+    }))
+
     // Refresh the data
     refreshData()
   }

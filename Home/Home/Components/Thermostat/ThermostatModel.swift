@@ -45,7 +45,7 @@ struct ThermostatModel: Codable, Equatable {
   let temperature: CGFloat
   var targetTemperature: CGFloat
   var mode: Mode
-  let status: Status = .on
+  let status: Status
 
   var keysToEncode: [Any] = CodingKeys.all // Any because it triggers a segmentation fault otherwised
 

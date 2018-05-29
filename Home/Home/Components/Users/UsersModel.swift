@@ -12,5 +12,5 @@ struct UsersModel: Decodable, Equatable {
 
   // MARK: - Public
 
-  let awayValue: UserModel.AwayValue
+  var awayValue: UserModel.AwayValue
 }
