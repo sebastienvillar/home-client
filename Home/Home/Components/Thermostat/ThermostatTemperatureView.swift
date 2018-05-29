@@ -31,6 +31,7 @@ class ThermostatTemperatureView: UIView {
 
   func setup(with viewModel: ThermostatTemperatureViewModel) {
     label.text = viewModel.temperature
+    arrow.isHidden = false
     switch viewModel.status {
     case .off:
       arrow.isHidden = true
