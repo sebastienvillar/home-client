@@ -41,6 +41,8 @@
 		4DAADD0D20BE3078007C8C77 /* SettingsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAADD0C20BE3078007C8C77 /* SettingsHeaderView.swift */; };
 		4DAADD0F20BE358D007C8C77 /* CancelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAADD0E20BE358D007C8C77 /* CancelButton.swift */; };
 		4DAADD1220BE3B3E007C8C77 /* EasyTappingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAADD1120BE3B3E007C8C77 /* EasyTappingButton.swift */; };
+		4DAADD1420BE3C9F007C8C77 /* config.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DAADD1320BE3C9F007C8C77 /* config.json */; };
+		4DAADD1620BE3D0D007C8C77 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAADD1520BE3D0D007C8C77 /* Config.swift */; };
 		4DF1BB132075397C00D12514 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1BB122075397C00D12514 /* AppDelegate.swift */; };
 		4DF1BB1A2075397D00D12514 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DF1BB192075397D00D12514 /* Assets.xcassets */; };
 		4DF1BB612075571600D12514 /* UIColor+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1BB5E2075571600D12514 /* UIColor+Palette.swift */; };
@@ -92,6 +94,8 @@
 		4DAADD0C20BE3078007C8C77 /* SettingsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHeaderView.swift; sourceTree = "<group>"; };
 		4DAADD0E20BE358D007C8C77 /* CancelButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelButton.swift; sourceTree = "<group>"; };
 		4DAADD1120BE3B3E007C8C77 /* EasyTappingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyTappingButton.swift; sourceTree = "<group>"; };
+		4DAADD1320BE3C9F007C8C77 /* config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = config.json; sourceTree = "<group>"; };
+		4DAADD1520BE3D0D007C8C77 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		4DF1BB0F2075397C00D12514 /* Home.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Home.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DF1BB122075397C00D12514 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DF1BB192075397D00D12514 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -228,6 +232,7 @@
 			children = (
 				4DF1BB122075397C00D12514 /* AppDelegate.swift */,
 				4DF1BB692075577700D12514 /* DataSource.swift */,
+				4DAADD1520BE3D0D007C8C77 /* Config.swift */,
 				4D58C84020A3C6D10021EE22 /* Api */,
 				4D58C84720A3DE190021EE22 /* Managers */,
 				4DF1BB6F207557A200D12514 /* Components */,
@@ -244,6 +249,7 @@
 				4D35137320BB41D00028B6F4 /* Fonts */,
 				4DF1BB192075397D00D12514 /* Assets.xcassets */,
 				4D35137720BB510C0028B6F4 /* LaunchScreen.storyboard */,
+				4DAADD1320BE3C9F007C8C77 /* config.json */,
 				4DF1BB1E2075397D00D12514 /* Info.plist */,
 			);
 			path = Resources;
@@ -356,6 +362,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D35137420BB41D80028B6F4 /* Inter-UI-Regular.ttf in Resources */,
+				4DAADD1420BE3C9F007C8C77 /* config.json in Resources */,
 				4D35137820BB510C0028B6F4 /* LaunchScreen.storyboard in Resources */,
 				4DF1BB1A2075397D00D12514 /* Assets.xcassets in Resources */,
 			);
@@ -409,6 +416,7 @@
 				4D58C85020A40D140021EE22 /* UsersManager.swift in Sources */,
 				4D35137D20BCB4A00028B6F4 /* LightView.swift in Sources */,
 				4D35139520BE29C50028B6F4 /* SettingsModeCellModel.swift in Sources */,
+				4DAADD1620BE3D0D007C8C77 /* Config.swift in Sources */,
 				4DF1BB6C2075577700D12514 /* RootVC.swift in Sources */,
 				4D35139320BE225A0028B6F4 /* SettingsModeCell.swift in Sources */,
 				4D35139120BE1D4F0028B6F4 /* SettingsButton.swift in Sources */,

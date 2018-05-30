@@ -11,7 +11,7 @@ import Foundation
 class UserApi {
 
   private struct Constants {
-    static let userEndpoint = "\(Api.endpoint)/users/\(NetworkSession.userId)"
+    static let userEndpoint = "\(Api.endpoint)/users/\(Config.shared.user)"
   }
 
   static func patch(model: UserModel, completion: @escaping Api.SetCompletion<RootModel>) {

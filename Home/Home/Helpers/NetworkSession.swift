@@ -11,7 +11,6 @@ import Foundation
 class NetworkSession {
 
   static let shared = NetworkSession()
-  static let userId = "sebastienvillar"
 
   // MARK: - Public
 
@@ -121,7 +120,7 @@ class NetworkSession {
     // Add query parameter
     var urlComponents = URLComponents(url: urlRequest.url!, resolvingAgainstBaseURL: false)!
     urlComponents.queryItems = urlComponents.queryItems ?? []
-    urlComponents.queryItems?.append(URLQueryItem(name: "id", value: NetworkSession.userId))
+    urlComponents.queryItems?.append(URLQueryItem(name: "id", value: Config.shared.user))
     urlRequest.url = urlComponents.url
     
     return urlRequest
