@@ -36,7 +36,7 @@ class UsersManager {
           dataSource.updateIfNeeded(with: httpResponse, model: model)
           break
         case .failure(let statusCode, let message):
-          AlertController.shared.show(request: "Patch User", statusCode: statusCode, message: message)
+          AlertController.shared.show(request: "Set userAwayMethod", statusCode: statusCode, message: message)
           break
         }
       }

@@ -15,6 +15,8 @@ class RootView: UIScrollView {
     static let paddingHorizontal: CGFloat = 35
     static let paddingVertical: CGFloat = 23
     static let interMarginVertical: CGFloat = 47
+    static let settingsMarginRight: CGFloat = 36
+    static let settingsMarginBottom: CGFloat = 28
   }
 
   // MARK: - Public
@@ -30,13 +32,15 @@ class RootView: UIScrollView {
     let thermostatTemperatureAdjustmentView: UIView
     let userView: UIView
     let lightsView: UIView
+    let settingsButton: UIButton
 
     var allViews: [UIView] {
       return [
         thermostatTemperatureView,
         thermostatTemperatureAdjustmentView,
         userView,
-        lightsView
+        lightsView,
+        settingsButton,
       ]
     }
   }
@@ -106,6 +110,15 @@ class RootView: UIScrollView {
       y: viewCollection.lightsView.bottom + Constants.interMarginVertical,
       width: width,
       height: viewCollection.thermostatTemperatureAdjustmentView.height
+    )
+
+    // Settings icon
+    viewCollection.settingsButton.sizeToFit()
+    viewCollection.settingsButton.frame = CGRect(
+      x: width - Constants.settingsMarginRight - viewCollection.settingsButton.width,
+      y: height - Constants.settingsMarginBottom - viewCollection.settingsButton.height,
+      width: viewCollection.settingsButton.width,
+      height: viewCollection.settingsButton.height
     )
   }
 

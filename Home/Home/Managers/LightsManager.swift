@@ -32,7 +32,7 @@ class LightsManager {
           dataSource.updateIfNeeded(with: httpResponse, model: model)
           break
         case .failure(let statusCode, let message):
-          AlertController.shared.show(request: "Patch Light: \(lightID)", statusCode: statusCode, message: message)
+          AlertController.shared.show(request: "Set status: \(lightID)", statusCode: statusCode, message: message)
           break
         }
       }

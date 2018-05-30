@@ -27,7 +27,30 @@ class ThermostatManager {
           dataSource.updateIfNeeded(with: httpResponse, model: model)
           break
         case .failure(let statusCode, let message):
-          AlertController.shared.show(request: "Patch Thermostat", statusCode: statusCode, message: message)
+          AlertController.shared.show(request: "Set targetTemperature", statusCode: statusCode, message: message)
+          break
+        }
+      }
+    }
+  }
+
+  static func setMode(_ mode: ThermostatModel.Mode, dataSource: DataSource) {
+    guard var thermostatModel = dataSource.thermostatModel else {
+      return
+    }
+
+    thermostatModel.mode = mode
+    thermostatModel.keysToEncode = [ThermostatModel.CodingKeys.mode]
+    dataSource.thermostatModel = thermostatModel
+
+    ThermostatApi.patch(model: thermostatModel) { response in
+      DispatchQueue.main.async {
+        switch response {
+        case .success(let httpResponse, let model):
+          dataSource.updateIfNeeded(with: httpResponse, model: model)
+          break
+        case .failure(let statusCode, let message):
+          AlertController.shared.show(request: "Set mode", statusCode: statusCode, message: message)
           break
         }
       }

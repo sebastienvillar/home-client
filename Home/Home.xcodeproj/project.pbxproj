@@ -20,6 +20,11 @@
 		4D35138520BCB99A0028B6F4 /* LightsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D35138420BCB99A0028B6F4 /* LightsController.swift */; };
 		4D35138720BCC5E10028B6F4 /* LightsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D35138620BCC5E10028B6F4 /* LightsApi.swift */; };
 		4D35138920BCC6130028B6F4 /* LightsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D35138820BCC6130028B6F4 /* LightsManager.swift */; };
+		4D35138D20BE1D320028B6F4 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D35138C20BE1D320028B6F4 /* SettingsVC.swift */; };
+		4D35138F20BE1D3B0028B6F4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D35138E20BE1D3B0028B6F4 /* SettingsView.swift */; };
+		4D35139120BE1D4F0028B6F4 /* SettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D35139020BE1D4F0028B6F4 /* SettingsButton.swift */; };
+		4D35139320BE225A0028B6F4 /* SettingsModeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D35139220BE225A0028B6F4 /* SettingsModeCell.swift */; };
+		4D35139520BE29C50028B6F4 /* SettingsModeCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D35139420BE29C50028B6F4 /* SettingsModeCellModel.swift */; };
 		4D3B67BD209F944B00E86C18 /* UIFont+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B67BC209F944B00E86C18 /* UIFont+Palette.swift */; };
 		4D3B67BF209F956F00E86C18 /* ThermostatTemperatureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B67BE209F956F00E86C18 /* ThermostatTemperatureViewModel.swift */; };
 		4D3B67C7209FA00F00E86C18 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B67C6209FA00F00E86C18 /* UserController.swift */; };
@@ -33,6 +38,9 @@
 		4D58C84C20A40B690021EE22 /* UsersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D58C84B20A40B690021EE22 /* UsersModel.swift */; };
 		4D58C84E20A40CB10021EE22 /* UserApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D58C84D20A40CB10021EE22 /* UserApi.swift */; };
 		4D58C85020A40D140021EE22 /* UsersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D58C84F20A40D140021EE22 /* UsersManager.swift */; };
+		4DAADD0D20BE3078007C8C77 /* SettingsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAADD0C20BE3078007C8C77 /* SettingsHeaderView.swift */; };
+		4DAADD0F20BE358D007C8C77 /* CancelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAADD0E20BE358D007C8C77 /* CancelButton.swift */; };
+		4DAADD1220BE3B3E007C8C77 /* EasyTappingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAADD1120BE3B3E007C8C77 /* EasyTappingButton.swift */; };
 		4DF1BB132075397C00D12514 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1BB122075397C00D12514 /* AppDelegate.swift */; };
 		4DF1BB1A2075397D00D12514 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DF1BB192075397D00D12514 /* Assets.xcassets */; };
 		4DF1BB612075571600D12514 /* UIColor+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1BB5E2075571600D12514 /* UIColor+Palette.swift */; };
@@ -63,6 +71,11 @@
 		4D35138420BCB99A0028B6F4 /* LightsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightsController.swift; sourceTree = "<group>"; };
 		4D35138620BCC5E10028B6F4 /* LightsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightsApi.swift; sourceTree = "<group>"; };
 		4D35138820BCC6130028B6F4 /* LightsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightsManager.swift; sourceTree = "<group>"; };
+		4D35138C20BE1D320028B6F4 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		4D35138E20BE1D3B0028B6F4 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		4D35139020BE1D4F0028B6F4 /* SettingsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsButton.swift; sourceTree = "<group>"; };
+		4D35139220BE225A0028B6F4 /* SettingsModeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModeCell.swift; sourceTree = "<group>"; };
+		4D35139420BE29C50028B6F4 /* SettingsModeCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModeCellModel.swift; sourceTree = "<group>"; };
 		4D3B67BC209F944B00E86C18 /* UIFont+Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Palette.swift"; sourceTree = "<group>"; };
 		4D3B67BE209F956F00E86C18 /* ThermostatTemperatureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermostatTemperatureViewModel.swift; sourceTree = "<group>"; };
 		4D3B67C6209FA00F00E86C18 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
@@ -76,6 +89,9 @@
 		4D58C84B20A40B690021EE22 /* UsersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersModel.swift; sourceTree = "<group>"; };
 		4D58C84D20A40CB10021EE22 /* UserApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApi.swift; sourceTree = "<group>"; };
 		4D58C84F20A40D140021EE22 /* UsersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersManager.swift; sourceTree = "<group>"; };
+		4DAADD0C20BE3078007C8C77 /* SettingsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHeaderView.swift; sourceTree = "<group>"; };
+		4DAADD0E20BE358D007C8C77 /* CancelButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelButton.swift; sourceTree = "<group>"; };
+		4DAADD1120BE3B3E007C8C77 /* EasyTappingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyTappingButton.swift; sourceTree = "<group>"; };
 		4DF1BB0F2075397C00D12514 /* Home.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Home.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DF1BB122075397C00D12514 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DF1BB192075397D00D12514 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -135,6 +151,19 @@
 			path = Lights;
 			sourceTree = "<group>";
 		};
+		4D35138A20BE1CFC0028B6F4 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				4D35138C20BE1D320028B6F4 /* SettingsVC.swift */,
+				4D35138E20BE1D3B0028B6F4 /* SettingsView.swift */,
+				4DAADD0C20BE3078007C8C77 /* SettingsHeaderView.swift */,
+				4D35139220BE225A0028B6F4 /* SettingsModeCell.swift */,
+				4D35139420BE29C50028B6F4 /* SettingsModeCellModel.swift */,
+				4D35139020BE1D4F0028B6F4 /* SettingsButton.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		4D3B67C5209FA00300E86C18 /* Users */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +196,15 @@
 				4D58C84F20A40D140021EE22 /* UsersManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		4DAADD1020BE3B27007C8C77 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				4DAADD1120BE3B3E007C8C77 /* EasyTappingButton.swift */,
+				4DAADD0E20BE358D007C8C77 /* CancelButton.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		4DF1BB062075397C00D12514 = {
@@ -237,9 +275,11 @@
 			isa = PBXGroup;
 			children = (
 				4D28C05720BB33980022881E /* Root */,
+				4DAADD1020BE3B27007C8C77 /* Base */,
 				4D35137920BCA7770028B6F4 /* Lights */,
 				4D3B67C5209FA00300E86C18 /* Users */,
 				4DF1BB70207557A900D12514 /* Thermostat */,
+				4D35138A20BE1CFC0028B6F4 /* Settings */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -333,13 +373,16 @@
 				4D3B67CB209FA01900E86C18 /* UserView.swift in Sources */,
 				4DF1BB6B2075577700D12514 /* DataSource.swift in Sources */,
 				4D3B67BF209F956F00E86C18 /* ThermostatTemperatureViewModel.swift in Sources */,
+				4DAADD0D20BE3078007C8C77 /* SettingsHeaderView.swift in Sources */,
 				4D3B67CF209FEAFC00E86C18 /* ThermostatTemperatureAdjustmentViewModel.swift in Sources */,
 				4DF1BB672075575C00D12514 /* Logger.swift in Sources */,
 				4D35138120BCB6660028B6F4 /* LightViewModel.swift in Sources */,
 				4D3B67C7209FA00F00E86C18 /* UserController.swift in Sources */,
 				4D3B67CD209FA01E00E86C18 /* UserViewModel.swift in Sources */,
+				4DAADD1220BE3B3E007C8C77 /* EasyTappingButton.swift in Sources */,
 				4D35137F20BCB4A50028B6F4 /* LightsView.swift in Sources */,
 				4D35138720BCC5E10028B6F4 /* LightsApi.swift in Sources */,
+				4D35138F20BE1D3B0028B6F4 /* SettingsView.swift in Sources */,
 				4DF1BB132075397C00D12514 /* AppDelegate.swift in Sources */,
 				4DF1BB612075571600D12514 /* UIColor+Palette.swift in Sources */,
 				4D3B67BD209F944B00E86C18 /* UIFont+Palette.swift in Sources */,
@@ -347,11 +390,13 @@
 				4D58C84C20A40B690021EE22 /* UsersModel.swift in Sources */,
 				4D3B67C9209FA01400E86C18 /* UserModel.swift in Sources */,
 				4DF1BB682075575C00D12514 /* Json.swift in Sources */,
+				4D35138D20BE1D320028B6F4 /* SettingsVC.swift in Sources */,
 				4DF1BB78207557C100D12514 /* ThermostatTemperatureAdjustmentView.swift in Sources */,
 				4D58C84920A3DE7E0021EE22 /* ThermostatManager.swift in Sources */,
 				4D35137B20BCA78D0028B6F4 /* LightModel.swift in Sources */,
 				4D58C84420A3C7280021EE22 /* Api.swift in Sources */,
 				4D28C05920BB33A00022881E /* RootModel.swift in Sources */,
+				4DAADD0F20BE358D007C8C77 /* CancelButton.swift in Sources */,
 				4D28C05B20BB34350022881E /* NetworkSession.swift in Sources */,
 				4DF1BB6E2075577D00D12514 /* RootView.swift in Sources */,
 				4DF1BB76207557C100D12514 /* ThermostatTemperatureView.swift in Sources */,
@@ -363,7 +408,10 @@
 				4D58C84E20A40CB10021EE22 /* UserApi.swift in Sources */,
 				4D58C85020A40D140021EE22 /* UsersManager.swift in Sources */,
 				4D35137D20BCB4A00028B6F4 /* LightView.swift in Sources */,
+				4D35139520BE29C50028B6F4 /* SettingsModeCellModel.swift in Sources */,
 				4DF1BB6C2075577700D12514 /* RootVC.swift in Sources */,
+				4D35139320BE225A0028B6F4 /* SettingsModeCell.swift in Sources */,
+				4D35139120BE1D4F0028B6F4 /* SettingsButton.swift in Sources */,
 				4DF1BB622075571600D12514 /* UIView+Frame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

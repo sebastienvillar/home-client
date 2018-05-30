@@ -67,11 +67,15 @@ class RootVC: UIViewController {
         ]
 
         // Setups view collection
+        let settingsButton = SettingsButton()
+        settingsButton.addTarget(self, action: #selector(self.handleSettingsTap), for: .touchUpInside)
+
         let viewCollection = RootView.ViewCollection(
           thermostatTemperatureView: thermostatController.temperatureView,
           thermostatTemperatureAdjustmentView: thermostatController.temperatureAdjustmentView,
           userView: userController.userView,
-          lightsView: lightsController.lightsView
+          lightsView: lightsController.lightsView,
+          settingsButton: settingsButton
         )
 
         // Setup root view
@@ -79,5 +83,11 @@ class RootVC: UIViewController {
         self.rootView.setup(with: .ready)
       }
     }
+  }
+
+  // MARK: Handlers
+
+  @objc private func handleSettingsTap() {
+    present(SettingsVC(dataSource: dataSource), animated: true, completion: nil)
   }
 }
