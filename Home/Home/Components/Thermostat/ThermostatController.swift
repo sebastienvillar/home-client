@@ -40,7 +40,7 @@ class ThermostatController {
     temperatureAdjustmentView.setup(with: ThermostatTemperatureAdjustmentViewModel(model: model))
   }
 
-  private func handleTemperatureSelection(_ temperature: CGFloat) {
+  private func handleTemperatureSelection(_ temperature: Float) {
     ThermostatManager.setTargetTemperature(temperature, dataSource: dataSource)
   }
 }

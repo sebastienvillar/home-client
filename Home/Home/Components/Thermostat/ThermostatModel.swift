@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import UIKit
 
 struct ThermostatModel: Codable, Equatable {
   static func == (lhs: ThermostatModel, rhs: ThermostatModel) -> Bool {
@@ -42,8 +41,8 @@ struct ThermostatModel: Codable, Equatable {
     case off
   }
 
-  let temperature: CGFloat
-  var targetTemperature: CGFloat
+  let temperature: Float
+  var targetTemperature: Float
   var mode: Mode
   let status: Status
 

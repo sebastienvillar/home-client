@@ -13,7 +13,7 @@ class ThermostatTemperatureAdjustmentView: UIView {
 
   // MARK: - Public
 
-  init(selectionHandler: @escaping (_ temperature: CGFloat) -> Void) {
+  init(selectionHandler: @escaping (_ temperature: Float) -> Void) {
     self.selectionHandler = selectionHandler
 
     super.init(frame: .zero)
@@ -132,7 +132,7 @@ class ThermostatTemperatureAdjustmentView: UIView {
   }()
 
   private var viewModel: ThermostatTemperatureAdjustmentViewModel?
-  private let selectionHandler: (_ temperature: CGFloat) -> Void
+  private let selectionHandler: (_ temperature: Float) -> Void
   private var selectedIndex: Int?
   private var cells = [Cell]()
   private var needsSelection = false
@@ -176,7 +176,7 @@ extension ThermostatTemperatureAdjustmentView: UIScrollViewDelegate {
 
     if let viewModel = viewModel {
       let temperature = viewModel.temperatureValues[centerIndex]
-      selectionHandler(CGFloat(temperature))
+      selectionHandler(Float(temperature))
     }
   }
 }

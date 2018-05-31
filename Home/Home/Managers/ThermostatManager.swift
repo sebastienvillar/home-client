@@ -11,7 +11,7 @@ import UIKit
 
 class ThermostatManager {
 
-  static func setTargetTemperature(_ temperature: CGFloat, dataSource: DataSource) {
+  static func setTargetTemperature(_ temperature: Float, dataSource: DataSource) {
     guard var thermostatModel = dataSource.thermostatModel else {
       return
     }
