@@ -14,6 +14,8 @@ class RootVC: UIViewController {
 
   init() {
     super.init(nibName: nil, bundle: nil)
+
+    NotificationCenter.default.addObserver(self, selector: #selector(handleAppDidBecomeActive), name: .UIApplicationDidBecomeActive, object: nil)
   }
 
   required init?(coder aDecoder: NSCoder) {
@@ -36,9 +38,6 @@ class RootVC: UIViewController {
     dataSource.subscribeToChanges(for: [.users, .user, .thermostat, .lights], block: DataSource.ChangeBlock(block: { [weak self] in
       self?.view.setNeedsLayout()
     }))
-
-    // Refresh the data
-    refreshData()
   }
 
   // MARK: - Private
@@ -86,6 +85,10 @@ class RootVC: UIViewController {
   }
 
   // MARK: Handlers
+
+  @objc private func handleAppDidBecomeActive() {
+    refreshData()
+  }
 
   @objc private func handleSettingsTap() {
     present(SettingsVC(dataSource: dataSource), animated: true, completion: nil)
