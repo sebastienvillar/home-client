@@ -18,6 +18,11 @@ class ThermostatManager {
 
     thermostatModel.targetTemperature = temperature
     thermostatModel.keysToEncode = [ThermostatModel.CodingKeys.targetTemperature]
+
+    guard thermostatModel != dataSource.thermostatModel else {
+      return
+    }
+
     dataSource.thermostatModel = thermostatModel
 
     ThermostatApi.patch(model: thermostatModel) { response in
@@ -41,6 +46,11 @@ class ThermostatManager {
 
     thermostatModel.mode = mode
     thermostatModel.keysToEncode = [ThermostatModel.CodingKeys.mode]
+
+    guard thermostatModel != dataSource.thermostatModel else {
+      return
+    }
+
     dataSource.thermostatModel = thermostatModel
 
     ThermostatApi.patch(model: thermostatModel) { response in

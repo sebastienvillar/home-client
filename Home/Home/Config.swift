@@ -12,6 +12,9 @@ class Config: Decodable {
   static let shared = Config()
 
   let homeIP: String
+  let homeLatitude: Double
+  let homeLongitude: Double
+  let homeRadius: Double
   let user: String
 
   init() {
@@ -19,6 +22,9 @@ class Config: Decodable {
     let data = try! Data(contentsOf: url)
     let model = try! JSONDecoder().decode(Config.self, from: data)
     self.homeIP = model.homeIP
+    self.homeLatitude = model.homeLatitude
+    self.homeLongitude = model.homeLongitude
+    self.homeRadius = model.homeRadius
     self.user = model.user
   }
 }

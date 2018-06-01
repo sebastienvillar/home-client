@@ -18,6 +18,10 @@ class AlertController {
   func show(request: String, statusCode: Int, message: String) {
     let title = "Could not execute request: \(request)"
     let message = "Status: \(statusCode), message: \(message)"
+    show(title: title, message: message)
+  }
+
+  func show(title: String, message: String? = nil) {
     let controller = UIAlertController(title: title, message: message, preferredStyle: .alert)
     controller.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
     show(controller)

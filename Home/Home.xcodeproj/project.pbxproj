@@ -43,6 +43,7 @@
 		4DAADD1220BE3B3E007C8C77 /* EasyTappingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAADD1120BE3B3E007C8C77 /* EasyTappingButton.swift */; };
 		4DAADD1420BE3C9F007C8C77 /* config.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DAADD1320BE3C9F007C8C77 /* config.json */; };
 		4DAADD1620BE3D0D007C8C77 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAADD1520BE3D0D007C8C77 /* Config.swift */; };
+		4DB8B3A820C0C297002FD28D /* UserLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8B3A720C0C297002FD28D /* UserLocationController.swift */; };
 		4DF1BB132075397C00D12514 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1BB122075397C00D12514 /* AppDelegate.swift */; };
 		4DF1BB1A2075397D00D12514 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DF1BB192075397D00D12514 /* Assets.xcassets */; };
 		4DF1BB612075571600D12514 /* UIColor+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1BB5E2075571600D12514 /* UIColor+Palette.swift */; };
@@ -96,6 +97,7 @@
 		4DAADD1120BE3B3E007C8C77 /* EasyTappingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyTappingButton.swift; sourceTree = "<group>"; };
 		4DAADD1320BE3C9F007C8C77 /* config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = config.json; sourceTree = "<group>"; };
 		4DAADD1520BE3D0D007C8C77 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		4DB8B3A720C0C297002FD28D /* UserLocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationController.swift; sourceTree = "<group>"; };
 		4DF1BB0F2075397C00D12514 /* Home.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Home.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DF1BB122075397C00D12514 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DF1BB192075397D00D12514 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 		4D3B67C5209FA00300E86C18 /* Users */ = {
 			isa = PBXGroup;
 			children = (
+				4DB8B3A720C0C297002FD28D /* UserLocationController.swift */,
 				4D3B67C6209FA00F00E86C18 /* UserController.swift */,
 				4D3B67C8209FA01400E86C18 /* UserModel.swift */,
 				4D3B67CA209FA01900E86C18 /* UserView.swift */,
@@ -335,6 +338,11 @@
 				TargetAttributes = {
 					4DF1BB0E2075397C00D12514 = {
 						CreatedOnToolsVersion = 9.3;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -395,6 +403,7 @@
 				4D3B67BD209F944B00E86C18 /* UIFont+Palette.swift in Sources */,
 				4D58C84220A3C6E30021EE22 /* ThermostatApi.swift in Sources */,
 				4D58C84C20A40B690021EE22 /* UsersModel.swift in Sources */,
+				4DB8B3A820C0C297002FD28D /* UserLocationController.swift in Sources */,
 				4D3B67C9209FA01400E86C18 /* UserModel.swift in Sources */,
 				4DF1BB682075575C00D12514 /* Json.swift in Sources */,
 				4D35138D20BE1D320028B6F4 /* SettingsVC.swift in Sources */,

@@ -23,6 +23,11 @@ class LightsManager {
     lightModel.status = status
     lightModel.keysToEncode = [LightModel.CodingKeys.status]
     lightModels[lightModelIndex] = lightModel
+
+    guard lightModels != dataSource.lightModels else {
+      return
+    }
+    
     dataSource.lightModels = lightModels
 
     LightsApi.patch(id: lightID, model: lightModel) { response in
