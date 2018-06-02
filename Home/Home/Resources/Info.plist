@@ -23,7 +23,9 @@
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>Needed for regions tracking</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Needes for regions tracking</string>
+	<string>Needed for regions tracking</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Needed for regions tracking</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Inter-UI-Regular.ttf</string>
