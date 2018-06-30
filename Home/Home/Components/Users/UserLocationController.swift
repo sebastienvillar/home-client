@@ -72,6 +72,8 @@ class UserLocationController: NSObject, CLLocationManagerDelegate {
     guard locationManager.monitoredRegions.isEmpty else {
       return
     }
+
+    print("Start tracking region")
     setupTracking { success in
       guard success else {
         return
@@ -88,6 +90,8 @@ class UserLocationController: NSObject, CLLocationManagerDelegate {
     guard !locationManager.monitoredRegions.isEmpty else {
       return
     }
+
+    print("Stop tracking region")
     locationManager.stopMonitoring(for: region)
   }
 
@@ -140,14 +144,17 @@ class UserLocationController: NSObject, CLLocationManagerDelegate {
   }
 
   func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
+    print("Did enter home on region change")
     updateAwayValue(to: .home)
   }
 
   func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
+    print("Did leave home on region change")
     updateAwayValue(to: .away)
   }
 
   func locationManager(_ manager: CLLocationManager, monitoringDidFailFor region: CLRegion?, withError error: Error) {
+    print("Monitoring did fail: \(error)")
     AlertController.shared.show(title: "Couldn't monitor region")
   }
 
@@ -163,9 +170,11 @@ class UserLocationController: NSObject, CLLocationManagerDelegate {
 
     let homeLocation = CLLocation(latitude: region.center.latitude, longitude: region.center.longitude)
     if homeLocation.distance(from: location) <= Config.shared.homeRadius {
+      print("Did enter home on explicit location request")
       updateAwayValue(to: .home)
     }
     else {
+      print("Did leave home on explicit location request")
       updateAwayValue(to: .away)
     }
   }
