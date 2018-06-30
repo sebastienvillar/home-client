@@ -24,7 +24,6 @@ extension URLRequest {
     request.httpMethod = "PATCH"
     request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 
-
     do {
       let data = try JSONEncoder().encode(object)
       request.httpBody = data
@@ -32,6 +31,23 @@ extension URLRequest {
     catch {
       // Error
       Logger.error("Cannot serialize object: \(object)")
+    }
+
+    return request
+  }
+
+  static func patch(url: URL, headers: [String: String] = [:], json: Any) -> URLRequest {
+    var request = urlRequest(with: url, headers: headers)
+    request.httpMethod = "PATCH"
+    request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+    do {
+      let data = try JSONSerialization.data(withJSONObject: json, options: [])
+      request.httpBody = data
+    }
+    catch {
+      // Error
+      Logger.error("Cannot serialize json: \(json)")
     }
 
     return request

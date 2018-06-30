@@ -69,6 +69,9 @@ class UserLocationController: NSObject, CLLocationManagerDelegate {
   // MARK: Helpers
 
   func startTracking() {
+    guard locationManager.monitoredRegions.isEmpty else {
+      return
+    }
     setupTracking { success in
       guard success else {
         return
@@ -82,6 +85,9 @@ class UserLocationController: NSObject, CLLocationManagerDelegate {
   }
 
   func stopTracking() {
+    guard !locationManager.monitoredRegions.isEmpty else {
+      return
+    }
     locationManager.stopMonitoring(for: region)
   }
 
@@ -113,7 +119,7 @@ class UserLocationController: NSObject, CLLocationManagerDelegate {
 
   private func updateAwayValue(to value: UserModel.AwayValue) {
     let identifier = UIApplication.shared.beginBackgroundTask(expirationHandler: nil)
-    UsersManager.setUserAwayMethod(.auto, awayValue: value, dataSource: dataSource) {
+    UsersManager.setUserAwayValue(value, dataSource: dataSource) {
       UIApplication.shared.endBackgroundTask(identifier)
     }
   }
@@ -157,10 +163,10 @@ class UserLocationController: NSObject, CLLocationManagerDelegate {
 
     let homeLocation = CLLocation(latitude: region.center.latitude, longitude: region.center.longitude)
     if homeLocation.distance(from: location) <= Config.shared.homeRadius {
-      UsersManager.setUserAwayMethod(userModel.awayMethod, awayValue: .home, dataSource: dataSource)
+      updateAwayValue(to: .home)
     }
     else {
-      UsersManager.setUserAwayMethod(userModel.awayMethod, awayValue: .away, dataSource: dataSource)
+      updateAwayValue(to: .away)
     }
   }
 }

@@ -50,4 +50,22 @@ class UsersManager {
       }
     }
   }
+
+  static func setUserAwayValue(_ awayValue: UserModel.AwayValue, dataSource: DataSource, completion: (() -> Void)? = nil) {
+    // Custom request. We need to be able to call this method before we have a model
+    UserApi.patch(userAwayValue: awayValue) { response in
+      DispatchQueue.main.async {
+        switch response {
+        case .success(let httpResponse, let model):
+          dataSource.updateIfNeeded(with: httpResponse, model: model)
+          completion?()
+          break
+        case .failure(let statusCode, let message):
+          AlertController.shared.show(request: "Set userAwayMethod", statusCode: statusCode, message: message)
+          completion?()
+          break
+        }
+      }
+    }
+  }
 }

@@ -18,7 +18,6 @@ class UserController {
 
   init(dataSource: DataSource) {
     self.dataSource = dataSource
-    self.userLocationController = UserLocationController(dataSource: dataSource)
 
     // Register changes
     dataSource.subscribeToChanges(for: [.users, .user], block: DataSource.ChangeBlock(block: { [weak self] in
@@ -29,7 +28,6 @@ class UserController {
   // MARK: - Private
 
   private let dataSource: DataSource
-  private let userLocationController: UserLocationController
 
   private func handleUserModelChange(userModel: UserModel?, usersModel: UsersModel?) {
     guard let userModel = userModel, let usersModel = usersModel else {

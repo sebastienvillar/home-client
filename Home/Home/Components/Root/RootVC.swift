@@ -12,7 +12,9 @@ class RootVC: UIViewController {
 
   // MARK: - Public
 
-  init() {
+  init(dataSource: DataSource) {
+    self.dataSource = dataSource
+
     super.init(nibName: nil, bundle: nil)
 
     NotificationCenter.default.addObserver(self, selector: #selector(handleAppDidBecomeActive), name: .UIApplicationDidBecomeActive, object: nil)
@@ -43,7 +45,7 @@ class RootVC: UIViewController {
   // MARK: - Private
 
   private var rootView: RootView { return view as! RootView }
-  private let dataSource = DataSource()
+  private let dataSource: DataSource
   private var controllers: [Any]?
 
   private func refreshData() {

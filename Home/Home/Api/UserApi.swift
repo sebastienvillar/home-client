@@ -18,4 +18,13 @@ class UserApi {
     let request = URLRequest.patch(url: URL(string: Constants.userEndpoint)!, object: model)
     NetworkSession.shared.send(with: request, completion: completion)
   }
+
+  static func patch(userAwayValue: UserModel.AwayValue, completion: @escaping Api.SetCompletion<RootModel>) {
+    let json = [
+      UserModel.CodingKeys.awayValue.rawValue: userAwayValue.rawValue
+    ]
+
+    let request = URLRequest.patch(url: URL(string: Constants.userEndpoint)!, json: json)
+    NetworkSession.shared.send(with: request, completion: completion)
+  }
 }

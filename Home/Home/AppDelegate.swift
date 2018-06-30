@@ -13,10 +13,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
 
+  private let dataSource = DataSource()
+  private var userController: UserLocationController!
+
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
+    userController = UserLocationController(dataSource: dataSource)
+
     window = UIWindow(frame: UIScreen.main.bounds)
-    window?.rootViewController = RootVC()
+    window?.rootViewController = RootVC(dataSource: dataSource)
     window?.makeKeyAndVisible()
     return true
   }
