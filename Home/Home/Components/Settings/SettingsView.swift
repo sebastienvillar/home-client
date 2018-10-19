@@ -11,20 +11,18 @@ import UIKit
 
 class SettingsView: UIView, UITableViewDataSource, UITableViewDelegate {
 
-  private struct Constants {
-    static let cancelBottomMargin: CGFloat = 26
-  }
-
   // MARK: - Public
 
   struct Data {
     enum Section {
       case thermostatMode
+      case logs
     }
 
     enum Row {
       case warm(checked: Bool)
       case cool(checked: Bool)
+      case showLogs
     }
 
     let sectionToRows: [Section: [Row]]
@@ -34,6 +32,7 @@ class SettingsView: UIView, UITableViewDataSource, UITableViewDelegate {
   private(set) var data: Data
   var onCancel: (() -> Void)?
   var onNewMode: ((Data.Row) -> Void)?
+  var onShowLogs: (() -> Void)?
 
   init(data: Data) {
     self.data = data
@@ -42,15 +41,18 @@ class SettingsView: UIView, UITableViewDataSource, UITableViewDelegate {
 
     backgroundColor = .backgroundGray
 
-    cancelButton.addTarget(self, action: #selector(handleCancelTap), for: .touchUpInside)
-    addSubview(cancelButton)
+    navigationBarView.onCancel = { [weak self] in
+      self?.onCancel?()
+    }
+    addSubview(navigationBarView)
 
     tableView.backgroundColor = .backgroundGray
     tableView.separatorColor = .backgroundGray
     tableView.dataSource = self
     tableView.delegate = self
-    tableView.register(SettingsModeCell.self, forCellReuseIdentifier: SettingsModeCell.identifier)
     tableView.register(SettingsHeaderView.self, forHeaderFooterViewReuseIdentifier: SettingsHeaderView.identifier)
+    tableView.register(SettingsModeCell.self, forCellReuseIdentifier: SettingsModeCell.identifier)
+    tableView.register(SettingsLogCell.self, forCellReuseIdentifier: SettingsLogCell.identifier)
     addSubview(tableView)
   }
 
@@ -68,25 +70,26 @@ class SettingsView: UIView, UITableViewDataSource, UITableViewDelegate {
   override func layoutSubviews() {
     super.layoutSubviews()
 
-    cancelButton.sizeToFit()
-    cancelButton.frame = CGRect(
-      x: layoutMargins.left,
-      y: layoutMargins.left,
-      width: cancelButton.width,
-      height: cancelButton.height
+    navigationBarView.sizeToFit()
+    navigationBarView.frame = CGRect(
+      x: 0,
+      y: 0,
+      width: width,
+      height: navigationBarView.height
     )
 
     tableView.frame = CGRect(
       x: 0,
-      y: cancelButton.bottom + Constants.cancelBottomMargin,
+      y: navigationBarView.bottom,
       width: width,
-      height: height - (cancelButton.bottom + Constants.cancelBottomMargin))
+      height: height - navigationBarView.bottom
+    )
   }
 
   // MARK: - Private
 
   private let tableView = UITableView(frame: .zero, style: .grouped)
-  private let cancelButton = CancelButton()
+  private let navigationBarView = NavigationBarView()
 
   // MARK: Handlers
 
@@ -112,6 +115,8 @@ class SettingsView: UIView, UITableViewDataSource, UITableViewDelegate {
       switch data.sections[section] {
       case .thermostatMode:
         return "Thermostat mode"
+      case .logs:
+        return "Logs"
       }
     }()
 
@@ -140,6 +145,11 @@ class SettingsView: UIView, UITableViewDataSource, UITableViewDelegate {
       let cell = tableView.dequeueReusableCell(withIdentifier: SettingsModeCell.identifier, for: indexPath) as! SettingsModeCell
       cell.setup(with: model)
       return cell
+    case .showLogs:
+      let model = SettingsLogCellModel()
+      let cell = tableView.dequeueReusableCell(withIdentifier: SettingsLogCell.identifier, for: indexPath) as! SettingsLogCell
+      cell.setup(with: model)
+      return cell
     }
   }
 
@@ -156,6 +166,8 @@ class SettingsView: UIView, UITableViewDataSource, UITableViewDelegate {
       onNewMode?(.warm(checked: true))
     case .cool:
       onNewMode?(.cool(checked: true))
+    case .showLogs:
+      onShowLogs?()
     }
   }
 }

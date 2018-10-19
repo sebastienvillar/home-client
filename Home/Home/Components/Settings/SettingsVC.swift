@@ -52,6 +52,25 @@ class SettingsVC: UIViewController {
         ThermostatManager.setMode(.warm, dataSource: self.dataSource)
       case .cool:
         ThermostatManager.setMode(.cool, dataSource: self.dataSource)
+      case .showLogs:
+        break
+      }
+    }
+
+    mainView.onShowLogs = { [weak self] in
+      LogsApi.get { response in
+        DispatchQueue.main.async {
+          switch response {
+          case .success(let model):
+            let vc = LogsVC(model: model)
+            vc.onCancel = { [weak self] in
+              self?.dismiss(animated: true, completion: nil)
+            }
+            self?.present(vc, animated: true, completion: nil)
+          case .failure(let statusCode, let message):
+            AlertController.shared.show(request: "Get logs", statusCode: statusCode, message: message)
+          }
+        }
       }
     }
   }
@@ -71,11 +90,16 @@ class SettingsVC: UIViewController {
       .cool(checked: thermostatModel.mode == .cool),
     ]
 
+    let logRows: [SettingsView.Data.Row] = [
+      .showLogs
+    ]
+
     return SettingsView.Data(
       sectionToRows: [
-        .thermostatMode: thermostatModeRows
+        .thermostatMode: thermostatModeRows,
+        .logs: logRows,
       ],
-      sections: [.thermostatMode]
+      sections: [.thermostatMode, .logs]
     )
   }
 }

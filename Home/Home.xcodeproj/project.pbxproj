@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D0951FF217A6AA000F25CF9 /* SettingsLogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0951FE217A6AA000F25CF9 /* SettingsLogCell.swift */; };
+		4D095202217A6AEA00F25CF9 /* SettingsLogCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D095201217A6AEA00F25CF9 /* SettingsLogCellModel.swift */; };
+		4D095204217A6B1200F25CF9 /* SettingsBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D095203217A6B1200F25CF9 /* SettingsBaseCell.swift */; };
+		4D095206217A6DFD00F25CF9 /* LogsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D095205217A6DFD00F25CF9 /* LogsVC.swift */; };
+		4D09520E217A717B00F25CF9 /* LogsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D09520D217A717B00F25CF9 /* LogsApi.swift */; };
+		4D095210217A719800F25CF9 /* LogsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D09520F217A719800F25CF9 /* LogsModel.swift */; };
+		4D095212217A755000F25CF9 /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D095211217A755000F25CF9 /* NavigationBarView.swift */; };
+		4D095214217A774200F25CF9 /* UIColor+Web.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D095213217A774200F25CF9 /* UIColor+Web.swift */; };
 		4D28C05620BB33230022881E /* RootApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D28C05520BB33230022881E /* RootApi.swift */; };
 		4D28C05920BB33A00022881E /* RootModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D28C05820BB33A00022881E /* RootModel.swift */; };
 		4D28C05B20BB34350022881E /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D28C05A20BB34350022881E /* NetworkSession.swift */; };
@@ -61,6 +69,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D0951FE217A6AA000F25CF9 /* SettingsLogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLogCell.swift; sourceTree = "<group>"; };
+		4D095201217A6AEA00F25CF9 /* SettingsLogCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLogCellModel.swift; sourceTree = "<group>"; };
+		4D095203217A6B1200F25CF9 /* SettingsBaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBaseCell.swift; sourceTree = "<group>"; };
+		4D095205217A6DFD00F25CF9 /* LogsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsVC.swift; sourceTree = "<group>"; };
+		4D09520D217A717B00F25CF9 /* LogsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsApi.swift; sourceTree = "<group>"; };
+		4D09520F217A719800F25CF9 /* LogsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsModel.swift; sourceTree = "<group>"; };
+		4D095211217A755000F25CF9 /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
+		4D095213217A774200F25CF9 /* UIColor+Web.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Web.swift"; sourceTree = "<group>"; };
 		4D28C05520BB33230022881E /* RootApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootApi.swift; sourceTree = "<group>"; };
 		4D28C05820BB33A00022881E /* RootModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootModel.swift; sourceTree = "<group>"; };
 		4D28C05A20BB34350022881E /* NetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; };
@@ -127,6 +143,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D095200217A6AA400F25CF9 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4D095203217A6B1200F25CF9 /* SettingsBaseCell.swift */,
+				4DAADD0C20BE3078007C8C77 /* SettingsHeaderView.swift */,
+				4D35139220BE225A0028B6F4 /* SettingsModeCell.swift */,
+				4D35139420BE29C50028B6F4 /* SettingsModeCellModel.swift */,
+				4D0951FE217A6AA000F25CF9 /* SettingsLogCell.swift */,
+				4D095201217A6AEA00F25CF9 /* SettingsLogCellModel.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		4D095207217A6E0400F25CF9 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				4D35139020BE1D4F0028B6F4 /* SettingsButton.swift */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
+		4D09520A217A6E8300F25CF9 /* Logs */ = {
+			isa = PBXGroup;
+			children = (
+				4D095205217A6DFD00F25CF9 /* LogsVC.swift */,
+				4D09520F217A719800F25CF9 /* LogsModel.swift */,
+			);
+			path = Logs;
+			sourceTree = "<group>";
+		};
 		4D28C05720BB33980022881E /* Root */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,10 +208,8 @@
 			children = (
 				4D35138C20BE1D320028B6F4 /* SettingsVC.swift */,
 				4D35138E20BE1D3B0028B6F4 /* SettingsView.swift */,
-				4DAADD0C20BE3078007C8C77 /* SettingsHeaderView.swift */,
-				4D35139220BE225A0028B6F4 /* SettingsModeCell.swift */,
-				4D35139420BE29C50028B6F4 /* SettingsModeCellModel.swift */,
-				4D35139020BE1D4F0028B6F4 /* SettingsButton.swift */,
+				4D095200217A6AA400F25CF9 /* Cells */,
+				4D095207217A6E0400F25CF9 /* Others */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -188,6 +232,7 @@
 			children = (
 				4D58C84320A3C7280021EE22 /* Api.swift */,
 				4D35138620BCC5E10028B6F4 /* LightsApi.swift */,
+				4D09520D217A717B00F25CF9 /* LogsApi.swift */,
 				4D28C05520BB33230022881E /* RootApi.swift */,
 				4D58C84120A3C6E30021EE22 /* ThermostatApi.swift */,
 				4D58C84D20A40CB10021EE22 /* UserApi.swift */,
@@ -210,6 +255,7 @@
 			children = (
 				4DAADD1120BE3B3E007C8C77 /* EasyTappingButton.swift */,
 				4DAADD0E20BE358D007C8C77 /* CancelButton.swift */,
+				4D095211217A755000F25CF9 /* NavigationBarView.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -262,6 +308,7 @@
 			isa = PBXGroup;
 			children = (
 				4DF1BB5E2075571600D12514 /* UIColor+Palette.swift */,
+				4D095213217A774200F25CF9 /* UIColor+Web.swift */,
 				4D3B67BC209F944B00E86C18 /* UIFont+Palette.swift */,
 				4DF1BB5F2075571600D12514 /* UIView+Frame.swift */,
 				4DF1BB602075571600D12514 /* URLRequest+Methods.swift */,
@@ -286,6 +333,7 @@
 				4D28C05720BB33980022881E /* Root */,
 				4DAADD1020BE3B27007C8C77 /* Base */,
 				4D35137920BCA7770028B6F4 /* Lights */,
+				4D09520A217A6E8300F25CF9 /* Logs */,
 				4D3B67C5209FA00300E86C18 /* Users */,
 				4DF1BB70207557A900D12514 /* Thermostat */,
 				4D35138A20BE1CFC0028B6F4 /* Settings */,
@@ -386,11 +434,13 @@
 				4DF1BB77207557C100D12514 /* ThermostatController.swift in Sources */,
 				4DF1BB75207557C100D12514 /* ThermostatModel.swift in Sources */,
 				4D3B67CB209FA01900E86C18 /* UserView.swift in Sources */,
+				4D0951FF217A6AA000F25CF9 /* SettingsLogCell.swift in Sources */,
 				4DF1BB6B2075577700D12514 /* DataSource.swift in Sources */,
 				4D3B67BF209F956F00E86C18 /* ThermostatTemperatureViewModel.swift in Sources */,
 				4DAADD0D20BE3078007C8C77 /* SettingsHeaderView.swift in Sources */,
 				4D3B67CF209FEAFC00E86C18 /* ThermostatTemperatureAdjustmentViewModel.swift in Sources */,
 				4DF1BB672075575C00D12514 /* Logger.swift in Sources */,
+				4D095214217A774200F25CF9 /* UIColor+Web.swift in Sources */,
 				4D35138120BCB6660028B6F4 /* LightViewModel.swift in Sources */,
 				4D3B67C7209FA00F00E86C18 /* UserController.swift in Sources */,
 				4D3B67CD209FA01E00E86C18 /* UserViewModel.swift in Sources */,
@@ -399,22 +449,27 @@
 				4D35138720BCC5E10028B6F4 /* LightsApi.swift in Sources */,
 				4D35138F20BE1D3B0028B6F4 /* SettingsView.swift in Sources */,
 				4DF1BB132075397C00D12514 /* AppDelegate.swift in Sources */,
+				4D095210217A719800F25CF9 /* LogsModel.swift in Sources */,
 				4DF1BB612075571600D12514 /* UIColor+Palette.swift in Sources */,
 				4D3B67BD209F944B00E86C18 /* UIFont+Palette.swift in Sources */,
 				4D58C84220A3C6E30021EE22 /* ThermostatApi.swift in Sources */,
 				4D58C84C20A40B690021EE22 /* UsersModel.swift in Sources */,
 				4DB8B3A820C0C297002FD28D /* UserLocationController.swift in Sources */,
+				4D095212217A755000F25CF9 /* NavigationBarView.swift in Sources */,
 				4D3B67C9209FA01400E86C18 /* UserModel.swift in Sources */,
 				4DF1BB682075575C00D12514 /* Json.swift in Sources */,
+				4D095202217A6AEA00F25CF9 /* SettingsLogCellModel.swift in Sources */,
 				4D35138D20BE1D320028B6F4 /* SettingsVC.swift in Sources */,
 				4DF1BB78207557C100D12514 /* ThermostatTemperatureAdjustmentView.swift in Sources */,
 				4D58C84920A3DE7E0021EE22 /* ThermostatManager.swift in Sources */,
 				4D35137B20BCA78D0028B6F4 /* LightModel.swift in Sources */,
 				4D58C84420A3C7280021EE22 /* Api.swift in Sources */,
 				4D28C05920BB33A00022881E /* RootModel.swift in Sources */,
+				4D095204217A6B1200F25CF9 /* SettingsBaseCell.swift in Sources */,
 				4DAADD0F20BE358D007C8C77 /* CancelButton.swift in Sources */,
 				4D28C05B20BB34350022881E /* NetworkSession.swift in Sources */,
 				4DF1BB6E2075577D00D12514 /* RootView.swift in Sources */,
+				4D09520E217A717B00F25CF9 /* LogsApi.swift in Sources */,
 				4DF1BB76207557C100D12514 /* ThermostatTemperatureView.swift in Sources */,
 				4D35138920BCC6130028B6F4 /* LightsManager.swift in Sources */,
 				4D28C05620BB33230022881E /* RootApi.swift in Sources */,
@@ -427,6 +482,7 @@
 				4D35139520BE29C50028B6F4 /* SettingsModeCellModel.swift in Sources */,
 				4DAADD1620BE3D0D007C8C77 /* Config.swift in Sources */,
 				4DF1BB6C2075577700D12514 /* RootVC.swift in Sources */,
+				4D095206217A6DFD00F25CF9 /* LogsVC.swift in Sources */,
 				4D35139320BE225A0028B6F4 /* SettingsModeCell.swift in Sources */,
 				4D35139120BE1D4F0028B6F4 /* SettingsButton.swift in Sources */,
 				4DF1BB622075571600D12514 /* UIView+Frame.swift in Sources */,
