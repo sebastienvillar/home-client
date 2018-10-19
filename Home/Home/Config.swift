@@ -16,6 +16,7 @@ class Config: Decodable {
   let homeLongitude: Double
   let homeRadius: Double
   let user: String
+  let password: String
 
   init() {
     let url = Bundle.main.url(forResource: "config", withExtension: "json")!
@@ -26,5 +27,6 @@ class Config: Decodable {
     self.homeLongitude = model.homeLongitude
     self.homeRadius = model.homeRadius
     self.user = model.user
+    self.password = model.password
   }
 }

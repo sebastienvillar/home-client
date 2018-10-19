@@ -122,6 +122,13 @@ class NetworkSession {
     urlComponents.queryItems = urlComponents.queryItems ?? []
     urlComponents.queryItems?.append(URLQueryItem(name: "id", value: Config.shared.user))
     urlRequest.url = urlComponents.url
+
+    // Add auth
+    let userPassword = "admin:\(Config.shared.password)"
+    let userPasswordData = userPassword.data(using: .utf8)!
+    let base64Credentials = userPasswordData.base64EncodedString()
+    let authString = "Basic \(base64Credentials)"
+    urlRequest.addValue(authString, forHTTPHeaderField: "Authorization")
     
     return urlRequest
   }

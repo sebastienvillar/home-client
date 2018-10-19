@@ -22,9 +22,9 @@
 	<true/>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>Needed for regions tracking</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Needed for regions tracking</string>
 	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Needed for regions tracking</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Needed for regions tracking</string>
 	<key>UIAppFonts</key>
 	<array>
