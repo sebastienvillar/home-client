@@ -184,7 +184,7 @@ extension ThermostatTemperatureAdjustmentView: UIScrollViewDelegate {
 private class Cell: UIView {
 
   struct Constants {
-    static let minWidth: CGFloat = 65
+    static let minWidth: CGFloat = 72
     static let maxWidth: CGFloat = 120
     static let height: CGFloat = 50
 

@@ -19,13 +19,8 @@ struct ThermostatTemperatureViewModel {
   }
 
   var temperature: String {
-    let roundedTemperature = round(model.temperature * 2) / 2
-    if roundedTemperature == Float(Int(roundedTemperature)) {
-      return "\(Int(roundedTemperature))º"
-    }
-    else {
-      return "\(roundedTemperature)º"
-    }
+    let roundedTemperature = round(model.temperature * 10) / 10
+    return "\(roundedTemperature)º"
   }
 
   var status: Status {

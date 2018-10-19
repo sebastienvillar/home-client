@@ -11,9 +11,9 @@ import Foundation
 struct ThermostatTemperatureAdjustmentViewModel {
 
   private struct Constants {
-    static let minTemperature = 15
-    static let maxTemperature = 30
-    static let temperatureInterval = 1
+    static let minTemperature: Float = 15
+    static let maxTemperature: Float = 30
+    static let temperatureInterval: Float = 0.5
   }
 
   // MARK: - Public
@@ -21,11 +21,14 @@ struct ThermostatTemperatureAdjustmentViewModel {
   let temperatureValues = Array(stride(from: Constants.minTemperature, to: Constants.maxTemperature + Constants.temperatureInterval, by: Constants.temperatureInterval))
 
   var temperatures: [String] {
-    return temperatureValues.map { "\($0)º" }
+    return temperatureValues.map {
+      let newValue = $0.truncatingRemainder(dividingBy: 1) == 0 ? String(format: "%.0f", $0) : String($0)
+      return "\(newValue)º"
+    }
   }
 
   var selectedTemperatureIndex: Int? {
-    let temperature = Int(round(model.targetTemperature))
+    let temperature = round(model.targetTemperature / Constants.temperatureInterval) * Constants.temperatureInterval
     return temperatureValues.index(of: temperature)
   }
 
