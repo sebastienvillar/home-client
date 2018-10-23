@@ -33,6 +33,7 @@ class RootView: UIScrollView {
     let userView: UIView
     let lightsView: UIView
     let settingsButton: UIButton
+    let brightnessView: UIView
 
     var allViews: [UIView] {
       return [
@@ -41,6 +42,7 @@ class RootView: UIScrollView {
         userView,
         lightsView,
         settingsButton,
+        brightnessView,
       ]
     }
   }
@@ -120,6 +122,9 @@ class RootView: UIScrollView {
       width: viewCollection.settingsButton.width,
       height: viewCollection.settingsButton.height
     )
+
+    // Brightness view
+    viewCollection.brightnessView.frame = bounds
   }
 
   // MARK: - Private

@@ -40,6 +40,8 @@ class ThermostatTemperatureView: UIView {
     case .cooling:
       arrow.transform = CGAffineTransform.identity
     }
+
+    setNeedsLayout()
   }
 
   // MARK: - Super overrides

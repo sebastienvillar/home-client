@@ -7,12 +7,13 @@
 //
 
 import Foundation
+import UIKit
 
-struct LightViewModel {
+struct LightViewModel: Equatable {
 
   // MARK: - Public
 
-  enum Status {
+  enum Status: Equatable {
     case on
     case off
   }
@@ -32,6 +33,10 @@ struct LightViewModel {
 
   var title: String {
     return model.name
+  }
+
+  var brightness: CGFloat {
+    return CGFloat(model.brightness)
   }
 
   init(model: LightModel) {

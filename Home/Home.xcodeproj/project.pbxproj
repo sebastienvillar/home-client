@@ -15,6 +15,8 @@
 		4D095210217A719800F25CF9 /* LogsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D09520F217A719800F25CF9 /* LogsModel.swift */; };
 		4D095212217A755000F25CF9 /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D095211217A755000F25CF9 /* NavigationBarView.swift */; };
 		4D095214217A774200F25CF9 /* UIColor+Web.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D095213217A774200F25CF9 /* UIColor+Web.swift */; };
+		4D095216217A855A00F25CF9 /* LightBrightnessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D095215217A855A00F25CF9 /* LightBrightnessView.swift */; };
+		4D095218217F6F7400F25CF9 /* Debouncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D095217217F6F7400F25CF9 /* Debouncer.swift */; };
 		4D28C05620BB33230022881E /* RootApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D28C05520BB33230022881E /* RootApi.swift */; };
 		4D28C05920BB33A00022881E /* RootModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D28C05820BB33A00022881E /* RootModel.swift */; };
 		4D28C05B20BB34350022881E /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D28C05A20BB34350022881E /* NetworkSession.swift */; };
@@ -77,6 +79,8 @@
 		4D09520F217A719800F25CF9 /* LogsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsModel.swift; sourceTree = "<group>"; };
 		4D095211217A755000F25CF9 /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
 		4D095213217A774200F25CF9 /* UIColor+Web.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Web.swift"; sourceTree = "<group>"; };
+		4D095215217A855A00F25CF9 /* LightBrightnessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightBrightnessView.swift; sourceTree = "<group>"; };
+		4D095217217F6F7400F25CF9 /* Debouncer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debouncer.swift; sourceTree = "<group>"; };
 		4D28C05520BB33230022881E /* RootApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootApi.swift; sourceTree = "<group>"; };
 		4D28C05820BB33A00022881E /* RootModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootModel.swift; sourceTree = "<group>"; };
 		4D28C05A20BB34350022881E /* NetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; };
@@ -199,6 +203,7 @@
 				4D35137C20BCB4A00028B6F4 /* LightView.swift */,
 				4D35138020BCB6660028B6F4 /* LightViewModel.swift */,
 				4D35137E20BCB4A50028B6F4 /* LightsView.swift */,
+				4D095215217A855A00F25CF9 /* LightBrightnessView.swift */,
 			);
 			path = Lights;
 			sourceTree = "<group>";
@@ -323,6 +328,7 @@
 				4DF1BB652075575C00D12514 /* Logger.swift */,
 				4D28C05A20BB34350022881E /* NetworkSession.swift */,
 				4D35137520BB42B30028B6F4 /* AlertController.swift */,
+				4D095217217F6F7400F25CF9 /* Debouncer.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -431,7 +437,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D095216217A855A00F25CF9 /* LightBrightnessView.swift in Sources */,
 				4DF1BB77207557C100D12514 /* ThermostatController.swift in Sources */,
+				4D095218217F6F7400F25CF9 /* Debouncer.swift in Sources */,
 				4DF1BB75207557C100D12514 /* ThermostatModel.swift in Sources */,
 				4D3B67CB209FA01900E86C18 /* UserView.swift in Sources */,
 				4D0951FF217A6AA000F25CF9 /* SettingsLogCell.swift in Sources */,
@@ -611,14 +619,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = W4473JX6UG;
+				DEVELOPMENT_TEAM = 9KBH5RKYEW;
 				INFOPLIST_FILE = "$(SRCROOT)/Home/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sebastienvillar.Home;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sebastienvillar.Home1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -630,14 +638,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = W4473JX6UG;
+				DEVELOPMENT_TEAM = 9KBH5RKYEW;
 				INFOPLIST_FILE = "$(SRCROOT)/Home/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sebastienvillar.Home;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sebastienvillar.Home1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;

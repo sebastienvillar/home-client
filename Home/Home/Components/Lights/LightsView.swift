@@ -18,8 +18,9 @@ class LightsView: UIView {
 
   // MARK: - Public
 
-  init(tapHandler: @escaping (_ lightID: String) -> Void) {
+  init(tapHandler: @escaping (_ lightID: String) -> Void, brightnessActivateHandler: @escaping (_ lightID: String) -> Void) {
     self.tapHandler = tapHandler
+    self.brightnessActivateHandler = brightnessActivateHandler
 
     super.init(frame: .zero)
   }
@@ -29,16 +30,31 @@ class LightsView: UIView {
   }
 
   func setup(with viewModels: [LightViewModel]) {
-    lightViews.forEach { $0.removeFromSuperview() }
-    lightViews = viewModels.map { model in
-      let view = LightView(tapHandler: { [weak self] in
-        self?.tapHandler(model.id)
+    viewModels.enumerated().forEach { index, viewModel in
+      let lightView: LightView = {
+        if lightViews.count > index {
+          return lightViews[index]
+        }
+        else {
+          let lightView = LightView()
+          lightViews.append(lightView)
+          addSubview(lightView)
+          return lightView
+        }
+      }()
+
+      lightView.setup(with: viewModel, tapHandler: { [weak self] in
+        self?.tapHandler(viewModel.id)
+      }, brightnessActivateHandler: { [weak self] in
+        self?.brightnessActivateHandler(viewModel.id)
       })
-      view.setup(with: model)
-      return view
     }
 
-    lightViews.forEach { self.addSubview($0) }
+    if lightViews.count > viewModels.count {
+      lightViews[viewModels.count..<lightViews.count].forEach { $0.removeFromSuperview() }
+      lightViews.removeLast(lightViews.count - viewModels.count)
+    }
+
     setNeedsLayout()
   }
 
@@ -84,5 +100,6 @@ class LightsView: UIView {
 
   private var lightViews = [LightView]()
   private let tapHandler: (String) -> Void
+  private let brightnessActivateHandler: (String) -> Void
 }
 

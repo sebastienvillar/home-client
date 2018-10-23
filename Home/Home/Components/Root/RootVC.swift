@@ -76,7 +76,8 @@ class RootVC: UIViewController {
           thermostatTemperatureAdjustmentView: thermostatController.temperatureAdjustmentView,
           userView: userController.userView,
           lightsView: lightsController.lightsView,
-          settingsButton: settingsButton
+          settingsButton: settingsButton,
+          brightnessView: lightsController.brightnessView
         )
 
         // Setup root view

@@ -15,9 +15,9 @@ extension UIColor {
 
   static let backgroundGray = UIColor(red: 0.12, green: 0.12, blue: 0.12, alpha: 1)
   static let backgroundLightGray = UIColor(red: 0.25, green: 0.25, blue: 0.25, alpha: 1)
+  static let backgroundDimming = UIColor.black.withAlphaComponent(0.85)
 
   // MARK: - Foreground
-
 
   static let foregroundGray = UIColor(red: 0.52, green: 0.52, blue: 0.52, alpha: 1)
   static let foregroundGreen = UIColor(red: 0.09, green: 0.81, blue: 0.03, alpha: 1)
