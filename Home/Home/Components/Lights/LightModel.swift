@@ -14,7 +14,8 @@ struct LightModel: Codable, Equatable {
     return (
       lhs.id == rhs.id &&
       lhs.name == rhs.name &&
-      lhs.status == rhs.status
+      lhs.status == rhs.status &&
+      lhs.brightness == rhs.brightness
     )
   }
 
@@ -25,8 +26,9 @@ struct LightModel: Codable, Equatable {
     case id
     case name
     case status
+    case brightness
 
-    static let all: [CodingKeys] = [.id, .name, .status]
+    static let all: [CodingKeys] = [.id, .name, .status, .brightness]
   }
 
   enum Status: String, Codable {
@@ -37,6 +39,7 @@ struct LightModel: Codable, Equatable {
   let id: String
   let name: String
   var status: Status
+  var brightness: Int
 
   var keysToEncode: [Any] = CodingKeys.all // Any because it triggers a segmentation fault otherwised
 
@@ -57,6 +60,10 @@ struct LightModel: Codable, Equatable {
 
     if keys.contains(.status) {
       try container.encode(status, forKey: .status)
+    }
+
+    if keys.contains(.brightness) {
+      try container.encode(brightness, forKey: .brightness)
     }
   }
 }
