@@ -55,6 +55,7 @@ class AlertController {
     let window = UIWindow(frame: .zero)
     window.rootViewController = rootVC
     window.windowLevel = UIWindowLevelAlert
+    window.isHidden = true
     return window
   }()
 

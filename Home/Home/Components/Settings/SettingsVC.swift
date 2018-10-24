@@ -58,6 +58,7 @@ class SettingsVC: UIViewController {
     }
 
     mainView.onShowLogs = { [weak self] in
+      HUD.show()
       LogsApi.get { response in
         DispatchQueue.main.async {
           switch response {
@@ -66,9 +67,14 @@ class SettingsVC: UIViewController {
             vc.onCancel = { [weak self] in
               self?.dismiss(animated: true, completion: nil)
             }
-            self?.present(vc, animated: true, completion: nil)
+            
+            HUD.hide() {
+              self?.present(vc, animated: true, completion: nil)
+            }
           case .failure(let statusCode, let message):
-            AlertController.shared.show(request: "Get logs", statusCode: statusCode, message: message)
+            HUD.hide() {
+              AlertController.shared.show(request: "Get logs", statusCode: statusCode, message: message)
+            }
           }
         }
       }
