@@ -23,8 +23,12 @@ class UsersManager {
       userModel.keysToEncode.append(UserModel.CodingKeys.awayValue)
 
       // Let's assume I'm the only user so there's no UI glitch
-      if awayValue == .away {
+      usersModel.awayValue = awayValue
+      switch awayValue {
+      case .away:
         usersModel.awayValue = .away
+      case .home:
+        usersModel.awayValue = .home
       }
     }
 
