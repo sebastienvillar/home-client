@@ -131,6 +131,4 @@ class RootView: UIScrollView {
 
   private var viewCollection: ViewCollection?
   private var status: Status = .loading
-
-  let button = UIButton()
 }
