@@ -18,6 +18,7 @@
 		4D095216217A855A00F25CF9 /* LightBrightnessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D095215217A855A00F25CF9 /* LightBrightnessView.swift */; };
 		4D095218217F6F7400F25CF9 /* Debouncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D095217217F6F7400F25CF9 /* Debouncer.swift */; };
 		4D09521A2180DFDB00F25CF9 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0952192180DFDB00F25CF9 /* HUD.swift */; };
+		4D09522421810FF700F25CF9 /* certificate.cer in Resources */ = {isa = PBXBuildFile; fileRef = 4D09522321810FF300F25CF9 /* certificate.cer */; };
 		4D28C05620BB33230022881E /* RootApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D28C05520BB33230022881E /* RootApi.swift */; };
 		4D28C05920BB33A00022881E /* RootModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D28C05820BB33A00022881E /* RootModel.swift */; };
 		4D28C05B20BB34350022881E /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D28C05A20BB34350022881E /* NetworkSession.swift */; };
@@ -83,6 +84,7 @@
 		4D095215217A855A00F25CF9 /* LightBrightnessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightBrightnessView.swift; sourceTree = "<group>"; };
 		4D095217217F6F7400F25CF9 /* Debouncer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debouncer.swift; sourceTree = "<group>"; };
 		4D0952192180DFDB00F25CF9 /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
+		4D09522321810FF300F25CF9 /* certificate.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = certificate.cer; sourceTree = "<group>"; };
 		4D28C05520BB33230022881E /* RootApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootApi.swift; sourceTree = "<group>"; };
 		4D28C05820BB33A00022881E /* RootModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootModel.swift; sourceTree = "<group>"; };
 		4D28C05A20BB34350022881E /* NetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; };
@@ -177,6 +179,14 @@
 				4D09520F217A719800F25CF9 /* LogsModel.swift */,
 			);
 			path = Logs;
+			sourceTree = "<group>";
+		};
+		4D09521B2181081E00F25CF9 /* Certificate */ = {
+			isa = PBXGroup;
+			children = (
+				4D09522321810FF300F25CF9 /* certificate.cer */,
+			);
+			path = Certificate;
 			sourceTree = "<group>";
 		};
 		4D28C05720BB33980022881E /* Root */ = {
@@ -302,6 +312,7 @@
 		4DF1BB2520753A3100D12514 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4D09521B2181081E00F25CF9 /* Certificate */,
 				4D35137320BB41D00028B6F4 /* Fonts */,
 				4DF1BB192075397D00D12514 /* Assets.xcassets */,
 				4D35137720BB510C0028B6F4 /* LaunchScreen.storyboard */,
@@ -429,6 +440,7 @@
 			files = (
 				4D35137420BB41D80028B6F4 /* Inter-UI-Regular.ttf in Resources */,
 				4DAADD1420BE3C9F007C8C77 /* config.json in Resources */,
+				4D09522421810FF700F25CF9 /* certificate.cer in Resources */,
 				4D35137820BB510C0028B6F4 /* LaunchScreen.storyboard in Resources */,
 				4DF1BB1A2075397D00D12514 /* Assets.xcassets in Resources */,
 			);

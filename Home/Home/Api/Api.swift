@@ -9,7 +9,7 @@
 import Foundation
 
 struct Api {
-  static let endpoint = "http://\(Config.shared.homeIP)"
+  static let endpoint = "https://\(Config.shared.homeIP)"
 
   typealias FetchCompletion<T: Decodable> = (_ response: NetworkSession.FetchResponse<T>) -> Void
   typealias SetCompletion<T: Decodable> = (_ response: NetworkSession.SetResponse<T>) -> Void

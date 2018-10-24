@@ -8,7 +8,7 @@
 
 import Foundation
 
-class NetworkSession {
+class NetworkSession: NSObject {
 
   static let shared = NetworkSession()
 
@@ -108,7 +108,7 @@ class NetworkSession {
 
   // MARK: - Private
 
-  private let session = URLSession.shared
+  private lazy var session = URLSession(configuration: URLSessionConfiguration.default, delegate: self, delegateQueue: nil)
   private var currentRequestID: UUID?
 
   private func prepareRequest(_ request: URLRequest) -> URLRequest {
@@ -131,5 +131,51 @@ class NetworkSession {
     urlRequest.addValue(authString, forHTTPHeaderField: "Authorization")
     
     return urlRequest
+  }
+}
+
+extension NetworkSession: URLSessionDelegate {
+  func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
+    // Get server trust
+    guard let serverTrust = challenge.protectionSpace.serverTrust else {
+      Logger.error("Missing server trust")
+      completionHandler(.cancelAuthenticationChallenge, nil)
+      return
+    }
+
+    // Get server certificate
+    guard let serverCertificate = SecTrustGetCertificateAtIndex(serverTrust, 0) else {
+      Logger.error("Missing server certificate")
+      completionHandler(.cancelAuthenticationChallenge, nil)
+      return
+    }
+    let serverCertificateData = SecCertificateCopyData(serverCertificate) as Data
+
+    // Get local certificate
+    guard let localCertificatePath = Bundle.main.path(forResource: "certificate", ofType: "cer"), let localCertificateData = try? Data(contentsOf: URL(fileURLWithPath: localCertificatePath)) else {
+      assertionFailure("Missing local certificate")
+      completionHandler(.cancelAuthenticationChallenge, nil)
+      return
+    }
+
+    // Set SSL policies for domain name check
+    SecTrustSetPolicies(serverTrust, SecPolicyCreateSSL(true, challenge.protectionSpace.host as CFString))
+
+    // Evaluate server certificate
+    var result: SecTrustResultType = .unspecified
+    SecTrustEvaluate(serverTrust, &result)
+    if (result == .recoverableTrustFailure) {
+      let trustExceptions = SecTrustCopyExceptions(serverTrust)
+      SecTrustSetExceptions(serverTrust, trustExceptions);
+      SecTrustEvaluate(serverTrust, &result);
+    }
+    let isServerTrusted = result == .proceed
+
+    // Check if server is trusted and server certificate is the same as local version
+    if (isServerTrusted && serverCertificateData == localCertificateData) {
+      completionHandler(.useCredential, URLCredential(trust: serverTrust))
+    } else {
+      completionHandler(.cancelAuthenticationChallenge, nil)
+    }
   }
 }
