@@ -54,7 +54,7 @@ class AlertController {
   private lazy var alertWindow: UIWindow = {
     let window = UIWindow(frame: .zero)
     window.rootViewController = rootVC
-    window.windowLevel = UIWindowLevelAlert
+    window.windowLevel = UIWindow.Level.alert
     window.isHidden = true
     return window
   }()

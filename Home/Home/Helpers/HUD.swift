@@ -49,7 +49,7 @@ class HUD {
   private static var hudWindow: UIWindow = {
     let window = UIWindow(frame: .zero)
     window.rootViewController = UIViewController()
-    window.windowLevel = UIWindowLevelAlert
+    window.windowLevel = UIWindow.Level.alert
     return window
   }()
 
@@ -75,7 +75,7 @@ private class HUDVC: UIViewController, UIViewControllerTransitioningDelegate {
   }
 
   override func loadView() {
-    view = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+    view = UIActivityIndicatorView(style: .whiteLarge)
   }
 
   override func viewWillAppear(_ animated: Bool) {

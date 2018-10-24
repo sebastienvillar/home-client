@@ -17,7 +17,7 @@ class RootVC: UIViewController {
 
     super.init(nibName: nil, bundle: nil)
 
-    NotificationCenter.default.addObserver(self, selector: #selector(handleAppDidBecomeActive), name: .UIApplicationDidBecomeActive, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(handleAppDidBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
   }
 
   required init?(coder aDecoder: NSCoder) {
