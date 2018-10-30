@@ -34,7 +34,7 @@ class LightsManager {
     patch(id: lightID, model: lightModel, dataSource: dataSource)
   }
 
-  static func setBrightness(_ brightness: Int, lightID: String, dataSource: DataSource) {
+  static func setBrightness(brightnessRatio: Float, lightID: String, dataSource: DataSource) {
     guard var lightModels = dataSource.lightModels else {
       return
     }
@@ -44,7 +44,7 @@ class LightsManager {
     }
 
     var lightModel = lightModels[lightModelIndex]
-    lightModel.brightness = brightness
+    lightModel.brightnessRatio = brightnessRatio
     lightModel.keysToEncode = [LightModel.CodingKeys.brightness]
     lightModels[lightModelIndex] = lightModel
 

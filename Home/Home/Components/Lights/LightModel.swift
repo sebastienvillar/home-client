@@ -40,6 +40,14 @@ struct LightModel: Codable, Equatable {
   let name: String
   var status: Status
   var brightness: Int
+  var brightnessRatio: Float {
+    get {
+      return Float(brightness - 1) / 253
+    }
+    set {
+      brightness = 1 + Int(roundf(newValue * 253))
+    }
+  }
 
   var keysToEncode: [Any] = CodingKeys.all // Any because it triggers a segmentation fault otherwised
 

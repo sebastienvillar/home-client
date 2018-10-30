@@ -35,8 +35,8 @@ struct LightViewModel: Equatable {
     return model.name
   }
 
-  var brightness: CGFloat {
-    return CGFloat(model.brightness)
+  var brightnessRatio: CGFloat {
+    return CGFloat(model.brightnessRatio)
   }
 
   init(model: LightModel) {

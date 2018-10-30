@@ -65,8 +65,8 @@ class LightBrightnessView: UIView {
     fatalError("init(coder:) has not been implemented")
   }
 
-  func setup(brightness: Float) {
-    self.brightness = CGFloat(brightness)
+  func setup(brightnessRatio: Float) {
+    self.brightnessRatio = CGFloat(brightnessRatio)
 
     setNeedsLayout()
   }
@@ -97,9 +97,9 @@ class LightBrightnessView: UIView {
     // Bar color
     barColoredView.frame = CGRect(
       x: 0,
-      y: barInnerBorderView.height * (1 - brightness),
+      y: barInnerBorderView.height * (1 - brightnessRatio),
       width: barInnerBorderView.width,
-      height: barInnerBorderView.height * brightness
+      height: barInnerBorderView.height * brightnessRatio
     )
   }
 
@@ -107,50 +107,50 @@ class LightBrightnessView: UIView {
 
   private let barInnerBorderView = UIView()
   private let barColoredView = UIView()
-  private var brightness: CGFloat = 1
+  private var brightnessRatio: CGFloat = 1
   private let brightnessChangeHandler: ((BrightnessChange) -> Void)
-  private var startPanBrightness: CGFloat?
+  private var startPanBrightnessRatio: CGFloat?
   private var startPanLocation: CGPoint?
 
   // MARK: Handlers
 
   @objc private func handleTap(_ recognizer: UITapGestureRecognizer) {
-    brightnessChangeHandler(.canceled(initialLevel: Float(brightness)))
+    brightnessChangeHandler(.canceled(initialLevel: Float(brightnessRatio)))
   }
 
   @objc private func handlePan(_ recognizer: UIPanGestureRecognizer) {
     switch recognizer.state {
     case .began:
-      startPanBrightness = brightness
+      startPanBrightnessRatio = brightnessRatio
       startPanLocation = recognizer.location(in: self)
 
     case .changed, .ended:
-      guard let startLocation = startPanLocation, let startBrightness = startPanBrightness else {
+      guard let startLocation = startPanLocation, let startBrightnessRatio = startPanBrightnessRatio else {
         assertionFailure("Missing location/brightness")
         return
       }
 
       let newLocation = recognizer.location(in: self)
-      let yMin = startLocation.y - Constants.maxPanDistance * (1 - startBrightness)
-      let yMax = startLocation.y + Constants.maxPanDistance * startBrightness
+      let yMin = startLocation.y - Constants.maxPanDistance * (1 - startBrightnessRatio)
+      let yMax = startLocation.y + Constants.maxPanDistance * startBrightnessRatio
       let y = min(max(newLocation.y, yMin), yMax)
-      let brightness = 1 - ((y - yMin) / (yMax - yMin))
+      let brightnessRatio = 1 - ((y - yMin) / (yMax - yMin))
 
       if recognizer.state == .changed {
-        brightnessChangeHandler(.changed(level: Float(brightness)))
+        brightnessChangeHandler(.changed(level: Float(brightnessRatio)))
       }
       else if recognizer.state == .ended {
-        startPanBrightness = nil
+        startPanBrightnessRatio = nil
         startPanLocation = nil
-        brightnessChangeHandler(.ended(level: Float(brightness)))
+        brightnessChangeHandler(.ended(level: Float(brightnessRatio)))
       }
 
     case .cancelled, .failed:
-      if let startBrightness = startPanBrightness {
-        brightnessChangeHandler(.canceled(initialLevel: Float(startBrightness)))
+      if let startBrightnessRatio = startPanBrightnessRatio {
+        brightnessChangeHandler(.canceled(initialLevel: Float(startBrightnessRatio)))
       }
 
-      startPanBrightness = nil
+      startPanBrightnessRatio = nil
       startPanLocation = nil
 
     case .possible:

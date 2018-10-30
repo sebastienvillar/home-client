@@ -50,7 +50,7 @@ class LightView: UIView {
       return
     }
 
-    iconView.setup(on: viewModel.status == .on, brightness: viewModel.brightness)
+    iconView.setup(on: viewModel.status == .on, brightnessRatio: viewModel.brightnessRatio)
     titleLabel.text = viewModel.title
     self.viewModel = viewModel
 
@@ -159,7 +159,7 @@ private class IconView: UIView {
   private let dimmedImageView = UIImageView()
   private let mainImageView = UIImageView()
   private var activatorViews: [UIView] = []
-  private var brightness: CGFloat = 1
+  private var brightnessRatio: CGFloat = 1
 
   init() {
     super.init(frame: .zero)
@@ -186,8 +186,8 @@ private class IconView: UIView {
     fatalError("init(coder:) has not been implemented")
   }
 
-  func setup(on: Bool, brightness: CGFloat) {
-    self.brightness = brightness
+  func setup(on: Bool, brightnessRatio: CGFloat) {
+    self.brightnessRatio = brightnessRatio
 
     if on {
       mainImageView.image = UIImage(named: "light-on")
@@ -248,9 +248,9 @@ private class IconView: UIView {
     mainImageView.sizeToFit()
     mainImageView.mask?.frame = CGRect(
       x: 0,
-      y: mainImageView.height * (1 - brightness),
+      y: mainImageView.height * (1 - brightnessRatio),
       width: mainImageView.width,
-      height:  mainImageView.height * brightness
+      height:  mainImageView.height * brightnessRatio
     )
 
     // Dimmed image

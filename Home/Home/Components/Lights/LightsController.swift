@@ -81,7 +81,7 @@ class LightsController {
     }
 
     brightnessChangeLightID = lightID
-    brightnessView.setup(brightness: Float(fromBrightnessScale: lightModel.brightness))
+    brightnessView.setup(brightnessRatio: lightModel.brightnessRatio)
     updateBrightnessViewVisibility(on: true)
   }
 
@@ -93,10 +93,10 @@ class LightsController {
 
     switch brightnessChange {
     case .changed(let level), .canceled(let level), .ended(let level):
-      brightnessView.setup(brightness: level)
+      brightnessView.setup(brightnessRatio: level)
       brightnessDebouncer.debounce { [weak self] in
         if let `self` = self {
-          LightsManager.setBrightness(level.toBrightnessScale(), lightID: lightID, dataSource: self.dataSource)
+          LightsManager.setBrightness(brightnessRatio: level, lightID: lightID, dataSource: self.dataSource)
         }
       }
 
@@ -125,15 +125,5 @@ class LightsController {
     }) { _ in
       self.brightnessView.isHidden = !on
     }
-  }
-}
-
-private extension Float {
-  func toBrightnessScale() -> Int {
-    return 1 + Int(roundf(self * 253))
-  }
-
-  init(fromBrightnessScale scale: Int) {
-    self = (Float(scale - 1) / 253)
   }
 }
