@@ -18,17 +18,24 @@ class LogsVC: UIViewController {
 
   init(model: LogsModel) {
     // Prepare html
-    let lines = model.text.split(separator: "\n")
-    let text = lines.reversed().joined(separator: "<br>")
+    self.html = {
+      let headRegex = try! NSRegularExpression(pattern: "<head[^>]*>", options: .caseInsensitive)
+      let headNSRange = headRegex.rangeOfFirstMatch(in: model.text, options: [], range: NSMakeRange(0, (model.text as NSString).length))
+      guard let headRange = Range(headNSRange, in: model.text) else {
+        assertionFailure("Missing head element")
+        return model.text
+      }
 
-    let style = [
-      "background-color: \(UIColor.backgroundGray.hex)",
-      "color: \(UIColor.foregroundWhite.hex)",
-      "font-size: 14px",
+      let style = [
+        "font-size: 14px",
+        "word-wrap: break-word",
       ].joined(separator: ";")
 
-    let head = "<head><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, minimum-scale=1\"></head>"
-    self.html = "<html>\(head)<body style=\"\(style)\">\(text)</body></html>"
+      let headLastRange = headRange.upperBound..<headRange.upperBound
+      var html = model.text
+      html.replaceSubrange(headLastRange, with: "<style>\(style)</style>")
+      return html
+    }()
 
     super.init(nibName: nil, bundle: nil)
 
@@ -46,9 +53,6 @@ class LogsVC: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    view.backgroundColor = .backgroundGray
-    webView.isOpaque = false
-    webView.backgroundColor = .clear
     view.addSubview(navigationBarView)
     view.addSubview(webView)
 
