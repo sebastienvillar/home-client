@@ -18,4 +18,6 @@ Create .cer from .pem
 
 ```
 openssl x509 -inform PEM -in certificate.pem -outform DER -out certificate.cer
+
+test
 ```
